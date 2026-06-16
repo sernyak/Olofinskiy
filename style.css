@@ -238,7 +238,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ====================================================== MEDIA MARQUEE */
 .marquee-band { border-block: 1px solid var(--line); padding: 1rem 0; }
-.marquee { max-width: 52rem; margin-inline: auto; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.marquee { max-width: 34rem; margin-inline: auto; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .marquee-track { display: flex; align-items: center; gap: 1.4rem; width: max-content; animation: marquee 50s linear infinite; }
 .marquee-track span {
   font-family: "Manrope", sans-serif; font-weight: 600; font-size: 0.78rem;
@@ -433,7 +433,7 @@ img, svg { display: block; max-width: 100%; }
 /* =============================================================== FOOTER */
 .site-footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2.5rem; background: var(--bg); }
 .footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
-.footer-brand { display: flex; align-items: center; gap: 1rem; }
+.footer-brand { display: flex; flex-direction: column; align-items: center; gap: 0.7rem; }
 .footer-brand .brand-emblem { width: 40px; height: 40px; }
 .footer-name { font-family: "Playfair Display", serif; font-size: 1.3rem; margin: 0; }
 .footer-role { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--ink-mute); }
