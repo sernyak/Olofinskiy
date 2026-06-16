@@ -237,9 +237,9 @@ img, svg { display: block; max-width: 100%; }
 .stat dd { margin: 0; font-size: 0.82rem; color: var(--ink-mute); letter-spacing: 0.02em; max-width: 14ch; }
 
 /* ====================================================== MEDIA MARQUEE */
-.marquee-band { padding: 0.8rem 0; }
-.marquee { max-width: 34rem; margin-inline: auto; border-block: 1px solid var(--line); padding: 0.55rem 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.marquee-track { display: flex; align-items: center; gap: 1.4rem; width: max-content; animation: marquee 50s linear infinite; }
+.marquee-band { padding: 0.4rem 0; }
+.marquee { max-width: 34rem; margin-inline: auto; border-block: 1px solid var(--line); padding: 0.3rem 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.marquee-track { display: flex; align-items: center; gap: 1.4rem; width: max-content; line-height: 1; animation: marquee 50s linear infinite; }
 .marquee-track span {
   font-family: "Manrope", sans-serif; font-weight: 600; font-size: 0.78rem;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); white-space: nowrap;
