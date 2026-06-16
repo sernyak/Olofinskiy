@@ -46,7 +46,13 @@
 
 /* ------------------------------------------------------------- reset */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth; -webkit-text-size-adjust: 100%;
+  /* Proportional root size: anchored to MacBook width (~1512px → 16px),
+     scales the whole rem-based layout up on wider/larger displays so big
+     monitors look like a zoomed-in version of the laptop view. */
+  font-size: clamp(16px, 1.06vw, 52px);
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
@@ -451,14 +457,8 @@ img, svg { display: block; max-width: 100%; }
 .heads .reveal.in,
 .aud-grid .reveal.in { transition-delay: var(--d, 0s); }
 
-/* ===================================================== LARGE SCREENS */
-/* On big / high-density displays scale the whole design up so it doesn't
-   shrink into a tiny central column. rem-based sizes follow these steps. */
-@media (min-width: 1600px) { html { font-size: 17px; } }
-@media (min-width: 1920px) { html { font-size: 18.5px; } }
-@media (min-width: 2560px) { html { font-size: 21px; } }
-@media (min-width: 3400px) { html { font-size: 26px; } }
-@media (min-width: 4400px) { html { font-size: 31px; } }
+/* Large screens are handled by the proportional `html` font-size above —
+   the whole rem-based layout scales up to fill big / high-density displays. */
 
 /* ========================================================== RESPONSIVE */
 @media (max-width: 980px) {
