@@ -283,8 +283,10 @@ img, svg { display: block; max-width: 100%; }
 }
 .portrait-frame::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit;
-  box-shadow: inset 0 0 60px rgba(0,0,0,0.6); pointer-events: none;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.6); pointer-events: none; z-index: 1;
 }
+.portrait-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.7s var(--ease); }
+.portrait-frame:hover img { transform: scale(1.04); }
 .portrait-mono { font-family: "Playfair Display", serif; font-size: clamp(3rem, 9vw, 5rem); color: var(--gold); opacity: 0.85; letter-spacing: 0.05em; }
 .portrait-caption { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); text-align: center; line-height: 1.6; }
 
