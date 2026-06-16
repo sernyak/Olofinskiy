@@ -15,7 +15,7 @@
 <meta property="og:locale" content="uk_UA" />
 <meta property="og:image" content="https://sernyak.github.io/Olofinskiy/assets/mykola.jpg" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0b'/%3E%3Cpath d='M50 44 L50 90 M50 44 L18 10 M50 44 L82 10' fill='none' stroke='%23c8a368' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0b'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23c8a368' stroke-width='2.5' opacity='0.5'/%3E%3Cpath d='M50 16 L50 84 M50 44 L26 18 M50 44 L74 18' fill='none' stroke='%23c8a368' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,10 +37,15 @@
     <a href="#top" class="brand" aria-label="Микола Олофінський — на початок">
       <span class="brand-emblem" aria-hidden="true">
         <svg viewBox="0 0 100 100">
-          <path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/>
+          <circle class="amulet-ring" cx="50" cy="50" r="44"/>
+          <path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/>
+          <circle class="amulet-node" cx="50" cy="14" r="3"/>
+          <circle class="amulet-node" cx="24" cy="16" r="3"/>
+          <circle class="amulet-node" cx="76" cy="16" r="3"/>
+          <circle class="amulet-node" cx="50" cy="86" r="3"/>
         </svg>
       </span>
-      <span class="brand-text">Олофінський</span>
+      <span class="brand-text">Микола Олофінський</span>
     </a>
 
     <nav class="nav" aria-label="Головна навігація">
@@ -81,7 +86,13 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-emblem-bg" aria-hidden="true">
       <svg viewBox="0 0 100 100">
-        <path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/>
+        <circle class="halo-spin" cx="50" cy="50" r="47"/>
+        <circle class="amulet-ring" cx="50" cy="50" r="44"/>
+        <path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/>
+        <circle class="amulet-node" cx="50" cy="14" r="3"/>
+        <circle class="amulet-node" cx="24" cy="16" r="3"/>
+        <circle class="amulet-node" cx="76" cy="16" r="3"/>
+        <circle class="amulet-node" cx="50" cy="86" r="3"/>
       </svg>
     </div>
 
@@ -90,6 +101,7 @@
       <h1 class="hero-title reveal">
         Микола<br /><span class="gold">Олофінський</span>
       </h1>
+      <p class="hero-motto reveal">«Ти — не той, хто ти є. Ти — те, що ти робиш».</p>
       <p class="hero-lead reveal">
         Глибинна психотерапія на межі — там, де страх, агресія та втрата
         стають точкою сили. Понад двадцять п'ять років практики. Війна. Реальні люди,
@@ -118,10 +130,6 @@
         </div>
       </dl>
     </div>
-
-    <a href="#about" class="scroll-cue" aria-label="Гортати далі">
-      <span></span>
-    </a>
   </section>
 
   <!-- ============ MEDIA MARQUEE ============ -->
@@ -190,7 +198,7 @@
         </blockquote>
 
         <ul class="cred-list reveal">
-          <li><strong>Освіта</strong><span>НМУ ім. О. О. Богомольця · гештальт-інститут</span></li>
+          <li><strong>Освіта</strong><span>НМУ ім. О. О. Богомольця</span><span>Східноєвропейський гештальт-інститут</span></li>
           <li><strong>Підхід</strong><span>гештальт · процес-орієнтований</span></li>
           <li><strong>Ветеран ЗСУ</strong><span>служба з 24.02.2022</span></li>
           <li><strong>Спеціалізація</strong><span>екстремальні стани · переговори</span></li>
@@ -269,7 +277,7 @@
       <div class="heads">
         <article class="head reveal">
           <div class="head-mark" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/></svg>
+            <svg viewBox="0 0 100 100"><path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/><circle class="amulet-node" cx="50" cy="14" r="3"/><circle class="amulet-node" cx="24" cy="16" r="3"/><circle class="amulet-node" cx="76" cy="16" r="3"/><circle class="amulet-node" cx="50" cy="86" r="3"/></svg>
           </div>
           <span class="head-roman">I</span>
           <h3>Нарцисична частина</h3>
@@ -282,7 +290,7 @@
 
         <article class="head reveal">
           <div class="head-mark" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/></svg>
+            <svg viewBox="0 0 100 100"><path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/><circle class="amulet-node" cx="50" cy="14" r="3"/><circle class="amulet-node" cx="24" cy="16" r="3"/><circle class="amulet-node" cx="76" cy="16" r="3"/><circle class="amulet-node" cx="50" cy="86" r="3"/></svg>
           </div>
           <span class="head-roman">II</span>
           <h3>Шизоїдна частина</h3>
@@ -295,7 +303,7 @@
 
         <article class="head reveal">
           <div class="head-mark" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/></svg>
+            <svg viewBox="0 0 100 100"><path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/><circle class="amulet-node" cx="50" cy="14" r="3"/><circle class="amulet-node" cx="24" cy="16" r="3"/><circle class="amulet-node" cx="76" cy="16" r="3"/><circle class="amulet-node" cx="50" cy="86" r="3"/></svg>
           </div>
           <span class="head-roman">III</span>
           <h3>Невротична частина</h3>
@@ -505,7 +513,12 @@
     <div class="footer-brand">
       <span class="brand-emblem" aria-hidden="true">
         <svg viewBox="0 0 100 100">
-          <path d="M50 44 L50 90 M50 44 L18 10 M50 44 L82 10"/>
+          <circle class="amulet-ring" cx="50" cy="50" r="44"/>
+          <path class="amulet-rune" d="M50 14 L50 86 M50 44 L24 16 M50 44 L76 16"/>
+          <circle class="amulet-node" cx="50" cy="14" r="3"/>
+          <circle class="amulet-node" cx="24" cy="16" r="3"/>
+          <circle class="amulet-node" cx="76" cy="16" r="3"/>
+          <circle class="amulet-node" cx="50" cy="86" r="3"/>
         </svg>
       </span>
       <div>
@@ -522,7 +535,6 @@
   </div>
   <div class="container footer-bottom">
     <p>© <span id="year"></span> Микола Олофінський. Усі права захищено.</p>
-    <p>«Ти — не той, хто ти є. Ти — те, що ти робиш».</p>
   </div>
 </footer>
 
