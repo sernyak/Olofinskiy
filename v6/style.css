@@ -209,7 +209,8 @@ section { position: relative; }
 }
 .hero-bg { position: absolute; top: 0; right: 0; width: 64%; height: 100%; z-index: -1; overflow: hidden; }
 .hero-image {
-  width: 100%; height: 116%; object-fit: cover; object-position: 62% 75%;
+  width: 100%; height: 116%; object-fit: cover; object-position: 62% 28%;
+  margin-top: -8%;
   opacity: 0.6; filter: grayscale(62%) contrast(1.05) brightness(0.72); will-change: transform;
 }
 .hero-gradient {
