@@ -226,7 +226,7 @@ section { position: relative; }
 .hero-motto {
   font-family: var(--font-display); font-style: normal; font-size: 1rem; font-weight: 300;
   color: var(--color-text); border-left: 2px solid var(--color-accent);
-  padding-left: 1rem; margin-bottom: 1.6rem; max-width: 30rem;
+  padding-left: 1rem; margin-top: -4px; margin-bottom: 1.6rem; max-width: 30rem;
 }
 .hero .subtitle { margin-bottom: 2.4rem; font-size: 1.2rem; color: var(--color-text); max-width: 34rem; font-weight: 300; }
 .cta-group { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
