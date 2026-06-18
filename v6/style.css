@@ -54,9 +54,11 @@ html {
 }
 
 body {
-  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+main {
+  overflow-x: clip;
 }
 
 img, svg { display: block; max-width: 100%; }
