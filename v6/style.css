@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -139,12 +139,10 @@ section { position: relative; }
 
 /* =============================================================== nav */
 .glass-nav {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  position: sticky; top: 0; left: 0; width: 100%; z-index: 1000;
   background: rgba(10, 10, 12, 0.7); backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent; transition: var(--transition);
-  /* Fix iOS disappearing fixed element on scroll */
-  transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); will-change: transform;
 }
 .glass-nav.scrolled { background: rgba(10, 10, 12, 0.95); border-bottom-color: rgba(255, 255, 255, 0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
 .nav-content {
