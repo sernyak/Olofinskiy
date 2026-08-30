@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F8F6F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151614" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="no-referrer">
+<title>Шлях до консультації</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap">
+
+<style>
+:root{
+  --bg:#F8F6F1;
+  --bg-tint:#EFEBE2;
+  --card:#FFFFFF;
+  --ink:#1A1815;
+  --ink-soft:#4B4740;
+  --muted:#7E796F;
+  --line:#E2DCD0;
+  --line-soft:#EDE8DE;
+
+  --bronze:#8F6316;
+  --bronze-soft:#F3E6CB;
+  --deep:#1F4E5F;
+  --deep-soft:#DCE9EC;
+  --rust:#A5432C;
+  --rust-soft:#F6E3DD;
+
+  --dark:#191C1D;
+  --on-dark:#F3F1EC;
+
+  --sh-sm:0 1px 2px rgba(26,24,21,.05);
+  --sh:0 2px 5px rgba(26,24,21,.05), 0 14px 30px -20px rgba(26,24,21,.4);
+  --sh-lg:0 3px 8px rgba(26,24,21,.06), 0 28px 54px -30px rgba(26,24,21,.5);
+
+  --f:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --f-d:"Bitter",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#151614;--bg-tint:#1C1E1B;--card:#1F2220;
+    --ink:#EDEBE5;--ink-soft:#C5C2B9;--muted:#8C8A82;
+    --line:#2E312D;--line-soft:#262924;
+    --bronze:#D6A551;--bronze-soft:#3A2D14;
+    --deep:#7FB3C2;--deep-soft:#1D3238;
+    --rust:#D07F67;--rust-soft:#3A211A;
+    --dark:#0F1110;--on-dark:#F3F1EC;
+    --sh-sm:0 1px 2px rgba(0,0,0,.35);
+    --sh:0 2px 5px rgba(0,0,0,.35), 0 16px 32px -22px #000;
+    --sh-lg:0 3px 8px rgba(0,0,0,.4), 0 30px 58px -32px #000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151614;--bg-tint:#1C1E1B;--card:#1F2220;
+  --ink:#EDEBE5;--ink-soft:#C5C2B9;--muted:#8C8A82;
+  --line:#2E312D;--line-soft:#262924;
+  --bronze:#D6A551;--bronze-soft:#3A2D14;
+  --deep:#7FB3C2;--deep-soft:#1D3238;
+  --rust:#D07F67;--rust-soft:#3A211A;
+  --dark:#0F1110;--on-dark:#F3F1EC;
+  --sh-sm:0 1px 2px rgba(0,0,0,.35);
+  --sh:0 2px 5px rgba(0,0,0,.35), 0 16px 32px -22px #000;
+  --sh-lg:0 3px 8px rgba(0,0,0,.4), 0 30px 58px -32px #000;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{font-size:clamp(16px, 15.2px + .25vw, 18px)}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--f);font-size:1rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+}
+p{margin:0 0 1rem;text-wrap:pretty}
+strong{font-weight:600;color:var(--ink)}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px}
+
+.band{padding:3.25rem 0}
+.band.tint{background:var(--bg-tint)}
+.band.dark{background:var(--dark);color:var(--on-dark)}
+.wrap{
+  max-width:38rem;margin:0 auto;
+  padding-left:max(1.15rem, env(safe-area-inset-left, 0px));
+  padding-right:max(1.15rem, env(safe-area-inset-right, 0px));
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero{padding-top:3.25rem;padding-bottom:2.5rem}
+.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--bronze);margin:0 0 1rem;
+}
+h1{
+  font-family:var(--f-d);font-weight:800;
+  font-size:clamp(2rem,8.5vw,3.1rem);line-height:1.08;letter-spacing:-.025em;
+  margin:0 0 1.15rem;text-wrap:balance;
+}
+.lede{font-size:1.15rem;line-height:1.5;color:var(--ink-soft);margin:0}
+
+/* ── Sections ─────────────────────────────────────── */
+.tag{
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--deep);margin:0 0 .6rem;
+}
+.band.dark .tag{color:var(--bronze)}
+h2{
+  font-family:var(--f-d);font-weight:700;
+  font-size:clamp(1.6rem,6vw,2.15rem);line-height:1.16;letter-spacing:-.02em;
+  margin:0 0 .6rem;text-wrap:balance;
+}
+h3{
+  font-family:var(--f-d);font-weight:700;font-size:1.2rem;line-height:1.25;
+  margin:2rem 0 .6rem;text-wrap:balance;
+}
+.sub{font-size:1rem;color:var(--muted);margin:0 0 1.5rem;line-height:1.55}
+.band.dark .sub{color:rgba(243,241,236,.7)}
+
+/* ── Price gap ────────────────────────────────────── */
+.gap-list{margin:1.5rem 0;display:flex;flex-direction:column;gap:.5rem}
+.gap-row{
+  display:flex;align-items:baseline;gap:.85rem;
+  padding:.75rem 1rem;border-radius:8px;background:var(--card);
+  border:1px solid var(--line);font-size:.95rem;
+}
+.gap-row .who{flex:1;color:var(--ink-soft)}
+.gap-row .num{
+  font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink);
+}
+.gap-row.him{background:var(--bronze-soft);border-color:var(--bronze)}
+.gap-row.him .who,.gap-row.him .num{color:var(--ink);font-weight:700}
+
+/* ── Bars ─────────────────────────────────────────── */
+.bars{margin:1.6rem 0;display:flex;flex-direction:column;gap:1rem}
+.bar-row .bar-label{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  font-size:.92rem;margin-bottom:.35rem;color:var(--ink-soft);
+}
+.bar-row .bar-val{
+  font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink);
+}
+.bar-track{height:1.5rem;background:var(--line-soft);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px}
+.bar-fill.low{background:var(--rust)}
+.bar-fill.mid{background:var(--deep)}
+.bar-fill.high{background:var(--bronze)}
+.bar-note{
+  font-size:.9rem;color:var(--muted);margin:.9rem 0 0;padding-left:.9rem;
+  border-left:2px solid var(--line);
+}
+
+/* ── Ladder ───────────────────────────────────────── */
+.ladder{margin:1.75rem 0;display:flex;flex-direction:column;gap:.6rem}
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:1rem 1.15rem;box-shadow:var(--sh-sm);position:relative;
+}
+.step .st-top{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  margin-bottom:.35rem;
+}
+.step .st-name{font-family:var(--f-d);font-weight:700;font-size:1.08rem;line-height:1.25}
+.step .st-price{
+  font-size:.88rem;font-weight:700;white-space:nowrap;color:var(--bronze);
+  font-variant-numeric:tabular-nums;
+}
+.step p{font-size:.92rem;color:var(--ink-soft);margin:0}
+.step.exists{border-left:4px solid var(--deep)}
+.step.missing{border-left:4px solid var(--rust);background:var(--rust-soft)}
+.step.target{border-left:4px solid var(--bronze);background:var(--bronze-soft)}
+.st-flag{
+  display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;margin-top:.6rem;padding:.15rem .5rem;border-radius:3px;
+}
+.step.missing .st-flag{background:var(--rust);color:#fff}
+.step.exists .st-flag{background:var(--deep-soft);color:var(--deep)}
+.arrow{text-align:center;color:var(--muted);font-size:1.05rem;line-height:1;margin:-.15rem 0}
+
+/* ── Numbers block ────────────────────────────────── */
+.tw{overflow-x:auto;margin:1.5rem 0}
+table{border-collapse:collapse;width:100%;min-width:20rem;font-size:.94rem}
+th,td{text-align:left;padding:.65rem .85rem;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--line);white-space:nowrap;
+}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:700;color:var(--ink)}
+
+/* ── Gap list ─────────────────────────────────────── */
+.gaps{list-style:none;margin:1.5rem 0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.gaps li{
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:.85rem 1rem .85rem 2.5rem;position:relative;font-size:.94rem;
+}
+.gaps li::before{
+  content:"—";position:absolute;left:1rem;top:.85rem;color:var(--rust);font-weight:700;
+}
+.gaps b{display:block;margin-bottom:.15rem;color:var(--ink)}
+.gaps span{color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+
+/* ── Blocks ───────────────────────────────────────── */
+.blocks{display:flex;flex-direction:column;gap:.85rem;margin:1.5rem 0}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.15rem;box-shadow:var(--sh-sm)}
+.blk .bl-tag{
+  font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--deep);margin:0 0 .3rem;
+}
+.blk h4{font-family:var(--f-d);font-size:1.08rem;font-weight:700;margin:0 0 .6rem}
+.blk ul{margin:0;padding-left:1.1rem;font-size:.92rem;color:var(--ink-soft)}
+.blk li{margin-bottom:.3rem;line-height:1.5}
+.blk li:last-child{margin-bottom:0}
+
+/* ── Statement ────────────────────────────────────── */
+.statement{
+  font-family:var(--f-d);font-weight:700;
+  font-size:clamp(1.45rem,6vw,2rem);line-height:1.22;letter-spacing:-.02em;
+  margin:0;text-wrap:balance;
+}
+.statement .hl{color:var(--bronze)}
+.band.dark p.after{margin:1.15rem 0 0;font-size:1rem;color:rgba(243,241,236,.78)}
+
+/* ── Timeline ─────────────────────────────────────── */
+.tl{margin:1.5rem 0;border-top:1px solid var(--line)}
+.tl-item{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line-soft)}
+.tl-when{
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--bronze);line-height:1.35;padding-top:.15rem;
+}
+.tl-item h4{font-family:var(--f-d);font-size:1.05rem;font-weight:700;margin:0 0 .25rem}
+.tl-item p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+.tl-item.free .tl-when{color:var(--deep)}
+
+/* ── Callout ──────────────────────────────────────── */
+.note{
+  background:var(--card);border-left:4px solid var(--bronze);border-radius:8px;
+  padding:1.15rem;margin:1.5rem 0;box-shadow:var(--sh-sm);
+}
+.note p{font-size:.95rem;margin-bottom:.65rem;color:var(--ink-soft)}
+.note p:last-child{margin-bottom:0}
+.note .nt{
+  display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--bronze);margin-bottom:.5rem;
+}
+
+.foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+
+@media (min-width:42rem){
+  .wrap{max-width:42rem;padding-left:2rem;padding-right:2rem}
+  .band{padding:4rem 0}
+  .hero{padding-top:4rem;padding-bottom:3rem}
+}
+</style>
+
+</head>
+<body>
+<div class="band">
+  <div class="wrap hero">
+    <p class="eyebrow">Практика Миколи Олофінського · серпень 2026</p>
+    <h1>Шлях до консультації</h1>
+    <p class="lede">Як зробити так, щоб клієнти на індивідуальні сесії приходили не випадково, а передбачувано. Ціль одна — заповнений календар. «Чоловіче коло», соцмережі й терапевтична група — засоби до неї.</p>
+  </div>
+</div>
+
+<div class="band tint">
+  <div class="wrap">
+    <p class="tag">Із чого починається розрахунок</p>
+    <h2>Чому $300 не продається з холоду</h2>
+    <p class="sub">Це не про ціну. Це про дистанцію між незнайомцем і такою сумою.</p>
+
+    <div class="gap-list">
+      <div class="gap-row"><span class="who">Середня консультація в Києві</span><span class="num">1 694 грн</span></div>
+      <div class="gap-row"><span class="who">Досвідчені спеціалісти у великих містах</span><span class="num">2 000 – 2 500</span></div>
+      <div class="gap-row"><span class="who">Сертифіковані психотерапевти</span><span class="num">2 300 – 3 500</span></div>
+      <div class="gap-row him"><span class="who">Консультація Миколи</span><span class="num">≈ 12 600 грн</span></div>
+    </div>
+
+    <p>Це приблизно <strong>у сім разів вище середньої по Києву</strong> і в три з половиною рази вище верхньої межі ринку.</p>
+    <p><strong>Це не помилка ціни й не привід її знижувати.</strong> І тут важливо не збитися на звичну логіку «дорого, отже треба здешевити вхід, щоб дотягнути людину до ціни». Для цієї аудиторії логіка зворотна.</p>
+
+    <h3>Ціна — це не бар'єр. Це фільтр</h3>
+    <p>Чоловік, який заробляє десять тисяч доларів на місяць і більше, дивиться на прайс у 2 000 гривень і робить висновок не про доступність, а про рівень: <em>«якщо його година коштує стільки — чого він може мене навчити?»</em></p>
+    <p>Це не снобізм. Це той самий спосіб оцінювати, яким він щодня користується у власній справі, обираючи юриста, підрядника чи партнера. Дешево означає не той рівень.</p>
+
+    <div class="note">
+      <span class="nt">Звідси інша задача всієї конструкції</span>
+      <p>Воронка потрібна <strong>не для того, щоб поступово підвести людину до дорогої ціни.</strong></p>
+      <p>Вона потрібна, щоб <strong>знайти тих, для кого ця ціна вже нормальна</strong> — і дати їм побачити рівень до того, як вони ухвалюватимуть рішення.</p>
+      <p>Відмінність принципова. У першому випадку ми виправдовуємось за ціну. У другому — шукаємо своїх людей.</p>
+    </div>
+
+    <h3>Чому саме Микола для цієї аудиторії</h3>
+    <p>Для чоловіка, який будує гроші, психолог із суто академічним досвідом не є авторитетом у питаннях, які його справді турбують. Той просто не був там, де цей чоловік зараз.</p>
+    <p>У Миколи рідкісне поєднання, яке майже ніколи не сходиться в одній людині: <strong>психотерапія, власний великий бізнес і війна.</strong> Три світи досвіду.</p>
+    <p>Для цієї аудиторії це не доповнення до кваліфікації — це і є головна кваліфікація. З ним можна говорити про гроші, ризик, відповідальність і втрату не в теорії: він розуміє ціну рішення, бо ухвалював такі рішення сам. І тоді ціна узгоджена з тим, ким він є. Дешевша суперечила б усьому іншому.</p>
+
+    <h3>Але звідси ж — жорсткий наслідок</h3>
+    <div class="note">
+      <span class="nt">Наслідок</span>
+      <p>Ніхто не купує послугу за 12 600 гривень у людини, яку вперше побачив у стрічці. На цьому рівні рішення ухвалюють не за оголошенням, а за враженням від живого контакту.</p>
+      <p>Тому реклама «запишіться на консультацію» працюватиме погано, скільки б у неї не вкладати — не через текст чи картинку, а через дистанцію.</p>
+    </div>
+
+    <p>Саме тому клієнти приходять за рекомендацією: рекомендація і є той місток довіри, який заміняє знайомство. Проблема лише в тому, що сарафанне радіо не масштабується — воно дає стільки, скільки дає, і вплинути на це неможливо.</p>
+    <p><strong>Потрібна конструкція, яка робить те саме, що робить рекомендація, тільки керовано.</strong> Наполовину вона вже існує і називається «Чоловіче коло».</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="tag">Цифра, на яку зазвичай не дивляться</p>
+    <h2>Скільки коштує година часу</h2>
+    <p class="sub">Виручка, поділена на реально витрачений час. Для сесії враховано підготовку й нотатки, для групових форматів — дві години зустрічі плюс година підготовки теми.</p>
+
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-label"><span>«Коло» зараз · 5–6 осіб</span><span class="bar-val">≈ 3 650 грн</span></div>
+        <div class="bar-track"><div class="bar-fill low" style="width:24%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>«Коло» заповнене · 10–12 осіб</span><span class="bar-val">≈ 7 350 грн</span></div>
+        <div class="bar-track"><div class="bar-fill mid" style="width:49%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Індивідуальна консультація</span><span class="bar-val">≈ 9 300 грн</span></div>
+        <div class="bar-track"><div class="bar-fill mid" style="width:62%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Терапевтична група · 9 × 4 000</span><span class="bar-val">≈ 12 000 грн</span></div>
+        <div class="bar-track"><div class="bar-fill high" style="width:80%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Терапевтична група · 9 × 5 000</span><span class="bar-val">≈ 15 000 грн</span></div>
+        <div class="bar-track"><div class="bar-fill high" style="width:100%"></div></div>
+      </div>
+    </div>
+
+    <h3>Що з цього випливає</h3>
+    <p><strong>Групова робота — не «дешевша сходинка, на якій втрачають гроші».</strong> При 4–5 тисячах за зустріч вона приносить за годину більше, ніж індивідуальна консультація. І водночас прогріває дев'ятьох людей до індивідуальної роботи. Тобто найдохідніший формат часу є ще й найкращим інструментом залучення.</p>
+    <p><strong>Напівпорожнє «Коло» — найгірше використання часу з усіх можливих.</strong> Воно дає вдвічі менше за годину, ніж одна консультація. Не тому, що захід поганий — тому, що половина місць порожня.</p>
+
+    <div class="note">
+      <span class="nt">Найдешевша зміна з усіх можливих</span>
+      <p>Заповнити «Коло» до історичної норми в 10–12 осіб — це подвоїти дохід із тієї самої витраченої години. Без нового продукту, без реклами, без підняття цін.</p>
+    </div>
+  </div>
+</div>
+
+<div class="band tint">
+  <div class="wrap">
+    <p class="tag">Головна конструкція</p>
+    <h2>Сходи: шлях людини до консультації</h2>
+    <p class="sub">Людина не стрибає з нуля на 12 600 гривень. Вона проходить сходинки, на кожній із яких платить трохи більше і довіряє трохи сильніше.</p>
+
+    <div class="ladder">
+      <div class="step exists">
+        <div class="st-top"><span class="st-name">Контент у соцмережах</span><span class="st-price">безкоштовно</span></div>
+        <p>Чоловік із цільової аудиторії бачить Миколу й упізнає в його словах себе. Головна зміна: увесь контент веде в одну точку — на «Коло».</p>
+        <span class="st-flag">є, але без напрямку</span>
+      </div>
+      <div class="arrow">↓</div>
+
+      <div class="step missing">
+        <div class="st-top"><span class="st-name">Безкоштовний перший контакт</span><span class="st-price">0 грн</span></div>
+        <p>Розбір теми, гайд, відкритий ефір — щось, за що людина лишає контакт. Зараз між «побачив пост» і «заплатив 2 000» немає нічого, тож кожне «Коло» набирається з нуля.</p>
+        <span class="st-flag">цього немає</span>
+      </div>
+      <div class="arrow">↓</div>
+
+      <div class="step exists">
+        <div class="st-top"><span class="st-name">«Чоловіче коло»</span><span class="st-price">2 000 грн</span></div>
+        <p>Перше живе враження. Це не терапія, тож не вимагає визнати, що «потрібен психолог» — для цієї аудиторії головний бар'єр саме тут. За дві години людина бачить не рекламу, а справжню роботу; підробити це неможливо.</p>
+        <p style="margin-top:.6rem"><strong>Але продавати як «дешевий вхід» не можна.</strong> Для цієї аудиторії слово «дешево» працює проти нас. Бар'єр знімає формат, а відбір — обмеженість: закрите коло, тільки чоловіки, максимум дванадцять місць, лише за записом. Не «приходьте всі, недорого», а «місць дванадцять».</p>
+        <span class="st-flag">є · заповнене наполовину</span>
+      </div>
+      <div class="arrow">↓</div>
+
+      <div class="step missing">
+        <div class="st-top"><span class="st-name">Повторні «Кола»</span><span class="st-price">2 000 × N</span></div>
+        <p>Чоловік, який ходить пів року, проводить із Миколою дванадцять годин. До розмови про індивідуальну роботу він знає його краще, ніж більшість клієнтів після трьох сесій. Зараз після заходу з людиною не зв'язується ніхто.</p>
+        <span class="st-flag">ресурс не використовується</span>
+      </div>
+      <div class="arrow">↓</div>
+
+      <div class="step missing">
+        <div class="st-top"><span class="st-name">Терапевтична група</span><span class="st-price">4–5 тис. × 10</span></div>
+        <p>Перехід від розмов про життя до справжньої роботи — у форматі, де не страшно й де вартість розділена між дев'ятьма. Найбільший стрибок у всій конструкції, тому вести туди варто не після першого «Кола», а після другого-третього.</p>
+        <span class="st-flag">продукту не існує</span>
+      </div>
+      <div class="arrow">↓</div>
+
+      <div class="step target">
+        <div class="st-top"><span class="st-name">Індивідуальні консультації</span><span class="st-price">$300 за сесію</span></div>
+        <p>Тут уже нічого не треба продавати — людина все вирішила раніше. Продаж виглядає як одна фраза: «здається, з цим варто попрацювати окремо». Після року знайомства це звучить не як пропозиція купити, а як професійна рекомендація. Бо нею і є.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="nt">Важливе уточнення</span>
+      <p>Продавати не заборонено на жодному етапі. Якщо людина після першого ж «Кола» питає про індивідуальну роботу — прекрасно, беремо.</p>
+      <p>Сходи не забороняють швидкі шляхи. Вони забезпечують, щоб для решти теж був шлях.</p>
+    </div>
+
+    <h3>Окремо: онлайн-«Коло» як другий потік</h3>
+    <p>Не запасний варіант для тих, хто не в Києві, а самостійний продукт із власним набором. Це знімає обмеження географії — зараз аудиторія фактично зводиться до чоловіків, які можуть приїхати ввечері на Липківського. І відкриває українців за кордоном: їх багато, вони мають гроші, і в них гострий дефіцит саме такого середовища з фахівцем, який розуміє контекст.</p>
+    <p>Чесно про складність: онлайн — не те саме, що офлайн. Частина цінності «Кола» саме в тому, що чоловіки в одній кімнаті. Варто пробувати як окремий експеримент, а не переносити формат «як є».</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="tag">Порядок величин</p>
+    <h2>Скільки це може дати</h2>
+    <p class="sub">Це модель, а не обіцянка. Усі проценти переходу — припущення, бо зараз не вимірюється жоден із них. Сенс розрахунку в тому, щоб показати порядок величин і те, від чого він залежить.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Джерело</th><th>Розрахунок</th><th>За рік</th></tr></thead>
+        <tbody>
+          <tr><td>«Коло» заповнене</td><td>12 осіб × 2 000 × 12 міс</td><td class="n">288 000</td></tr>
+          <tr><td>Терапевтична група, один набір</td><td>9 × 4 000 × 10 зустрічей</td><td class="n">360 000</td></tr>
+          <tr><td>Індивідуальні з воронки</td><td>8 клієнтів × 5 сесій × 12 600</td><td class="n">504 000</td></tr>
+          <tr class="total"><td>Разом</td><td></td><td class="n">≈ 1 150 000 грн</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Для порівняння: «Коло» на 5–6 осіб дає зараз приблизно <strong>120–145 тисяч на рік</strong>.</p>
+    <p>Навіть якщо всі припущення про переходи зменшити вдвічі, конструкція лишається осмисленою. І, що важливіше, вона <strong>дає цифри, які можна міряти</strong> — а отже, поступово покращувати. Зараз міряти нічого.</p>
+  </div>
+</div>
+
+<div class="band tint">
+  <div class="wrap">
+    <p class="tag">Де рвуться сходи</p>
+    <h2>Чого бракує, щоб це запрацювало</h2>
+    <p class="sub">Не критика, а перелік конкретних розривів. Кожен зупиняє рух людини до наступного кроку.</p>
+
+    <ul class="gaps">
+      <li><b>Невідомо, до кого говоримо</b><span>Портрет аудиторії виведений із текстів, а не з розмов із клієнтами. Жодного глибинного інтерв'ю не проводилось — тому контент пишеться навмання.</span></li>
+      <li><b>Немає безкоштовного першого кроку</b><span>Між постом і 2 000 гривень немає нічого. Кожне «Коло» набирається з нуля.</span></li>
+      <li><b>Немає бази контактів</b><span>Немає списку тих, хто був чи цікавився. Немає кому надіслати анонс.</span></li>
+      <li><b>«Коло» ніхто не просуває</b><span>Промо-кампанія до заходу — 15–20 годин на місяць. Їх немає в розкладі ні в кого.</span></li>
+      <li><b>Після «Кола» не відбувається нічого</b><span>Найтепліший контакт, який взагалі буває, — і жодного кроку далі.</span></li>
+      <li><b>Терапевтичної групи не існує</b><span>Середня сходинка відсутня. Стрибок із 2 000 одразу на 12 600.</span></li>
+      <li><b>Заявки ніде не фіксуються</b><span>Невідомо, скільки їх, звідки й скільки губиться. Неможливо порахувати ні ціль, ні ефект жодної зміни.</span></li>
+      <li><b>Форма на сайті не працює</b><span>Заявка нікуди не доходить — дані копіюються в буфер обміну.</span></li>
+      <li><b>Немає жодного відгуку</b><span>Для преміального сегмента соціальний доказ обов'язковий.</span></li>
+      <li><b>Немає пакетів консультацій</b><span>Клієнт щоразу вирішує наново, чи приходити. Пакет із п'яти сесій — найдешевший важіль доходу з наявних.</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="tag">Обсяг робіт</p>
+    <h2>Що треба робити</h2>
+    <p class="sub">Перші два блоки робляться один раз. Другі два — постійно.</p>
+
+    <div class="blocks">
+      <div class="blk">
+        <p class="bl-tag">Блок A · одноразово, 4–6 тижнів</p>
+        <h4>Фундамент</h4>
+        <ul>
+          <li>Зняти цифри практики: клієнтів на місяць, звідки приходять, скільки сесій бере клієнт</li>
+          <li>8–12 розмов із реальними клієнтами — дізнатися, якими словами вони описують свою проблему</li>
+          <li>Визначити 1–2 пріоритетні групи аудиторії</li>
+          <li>Сформулювати позиціювання</li>
+          <li>Побудувати продуктову лінійку з цінами, включно з пакетами й форматом групи</li>
+        </ul>
+      </div>
+
+      <div class="blk">
+        <p class="bl-tag">Блок B · одноразово, 3–4 тижні</p>
+        <h4>Інфраструктура</h4>
+        <ul>
+          <li>Полагодити форму заявки й завести облік</li>
+          <li>Створити базу контактів і спосіб її поповнювати</li>
+          <li>Зробити безкоштовний перший крок</li>
+          <li>Зібрати 10–15 відгуків в етичному форматі</li>
+          <li>Переписати сайт під результати досліджень</li>
+          <li>Розробити терапевтичну групу як продукт</li>
+        </ul>
+      </div>
+
+      <div class="blk">
+        <p class="bl-tag">Блок C · постійно, щотижня</p>
+        <h4>Контент</h4>
+        <ul>
+          <li>Контент-план на місяць уперед</li>
+          <li>Зйомка пакетом: 8–12 роликів за одну сесію, раз на два тижні</li>
+          <li>Монтаж, обкладинки, адаптація під платформи</li>
+          <li>Тексти й сценарії · публікація · коментарі та повідомлення</li>
+          <li>Розбір цифр і коригування</li>
+        </ul>
+      </div>
+
+      <div class="blk">
+        <p class="bl-tag">Блок D · постійно, щомісяця</p>
+        <h4>«Коло» і продажі</h4>
+        <ul>
+          <li>Промо-кампанія за три тижні до кожного заходу</li>
+          <li>Реєстрація, оплати, нагадування</li>
+          <li><strong>Зв'язок з учасниками через 2–3 дні після заходу</strong></li>
+          <li>Обробка заявок протягом пів години</li>
+          <li>Follow-up після першої консультації · збір відгуків</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band tint">
+  <div class="wrap">
+    <p class="tag">Арифметика</p>
+    <h2>Скільки це роботи</h2>
+
+    <p><strong>Разові блоки A і B</strong> — приблизно <strong>200–280 годин</strong>. Це п'ять-сім тижнів роботи однієї людини на повній зайнятості. Зараз цю роботу не робить ніхто.</p>
+
+    <p><strong>Постійні блоки C і D</strong> — приблизно <strong>45–65 годин на тиждень</strong>:</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Напрям</th><th>Год / тиждень</th></tr></thead>
+        <tbody>
+          <tr><td>Контент: план, сценарії, зйомка, монтаж, публікація, спільнота</td><td class="n">25–34</td></tr>
+          <tr><td>«Коло»: промо, реєстрація, логістика, зв'язок після заходу</td><td class="n">6–9</td></tr>
+          <tr><td>Продажі, заявки, аналітика, відгуки</td><td class="n">10–16</td></tr>
+          <tr><td>Адміністрування й поточні справи</td><td class="n">8–12</td></tr>
+          <tr class="total"><td>Разом</td><td class="n">45–65</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Робочий тиждень — 40 годин. Тобто описана система вимагає приблизно <strong>півтори ставки постійної роботи</strong>, і це без платної реклами.</p>
+  </div>
+</div>
+
+<div class="band dark">
+  <div class="wrap">
+    <p class="tag">Що з цього випливає</p>
+    <p class="statement">Півтори ставки — не проблема. Проблема в тому, що ці години складаються з <span class="hl">шести різних професій.</span></p>
+    <p class="after">Контент-стратегія, копірайтинг, операторська робота, монтаж, дизайн, адміністрування. Кожній вчаться роками, і людина без відповідної підготовки витрачає на ту саму задачу втричі-вп'ятеро більше часу, отримуючи результат, який не працює.</p>
+    <p class="after">Тобто питання не в чиїйсь старанності. Обсяг фізично не поміщається в один робочий тиждень, а компетенції — в одну людину. Це властивість самої конструкції.</p>
+    <p class="after"><strong>Хороша новина:</strong> наймати шістьох не треба. Близькі за навичками ролі об'єднуються — стратег і аналітик, копірайтер і соцмережі, оператор і монтажер. Реально йдеться про кількох людей із частковою зайнятістю, і заходити вони мають по черзі, коли для кожного з'явиться робота.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="tag">Зони відповідальності</p>
+    <h2>Хто за що відповідає</h2>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Роль</th><th>Зона</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Стратег</strong></td><td>Дослідження аудиторії, позиціювання, продуктова лінійка, контент-план, аналітика, координація</td></tr>
+          <tr><td><strong>Копірайтер і соцмережі</strong></td><td>Тексти, сценарії, публікація, спільнота, промо «Кола»</td></tr>
+          <tr><td><strong>Оператор і монтажер</strong></td><td>Зйомка пакетом, монтаж, обкладинки, адаптація під платформи</td></tr>
+          <tr><td><strong>Дизайнер</strong></td><td>Банери, візуал, оформлення профілів</td></tr>
+          <tr><td><strong>Асистент</strong></td><td>Адміністрування, логістика, реєстрація, обробка заявок, нагадування, збір відгуків</td></tr>
+          <tr><td><strong>Микола</strong></td><td>Смисли, участь у кадрі, проведення «Кола» й сесій, затвердження матеріалів</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <span class="nt">Головне в цій таблиці</span>
+      <p>Незамінних функцій у Миколи дві: <strong>говорити й давати смисли.</strong> Усе інше в принципі може робити хтось інший.</p>
+      <p>Якщо він сам монтує, підбирає банери чи пише підписи — система зупиняється, бо його час найдорожчий у всій конструкції.</p>
+    </div>
+  </div>
+</div>
+
+<div class="band tint">
+  <div class="wrap">
+    <p class="tag">Послідовність</p>
+    <h2>Порядок кроків</h2>
+
+    <div class="tl">
+      <div class="tl-item free">
+        <span class="tl-when">2 тижні · нуль витрат</span>
+        <div>
+          <h4>Порахувати те, що вже є</h4>
+          <p>Завести облік заявок — три хвилини на день. Зняти цифри практики за пів року з календаря. Опитати учасників трьох останніх «Кіл»: як дізналися, чому прийшли, чи думали про індивідуальну роботу. Після цього розмова про будь-які вкладення ведеться на фактах.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Місяць 1</span>
+        <div>
+          <h4>Фундамент</h4>
+          <p>Дослідження аудиторії, позиціювання, продуктова лінійка. Паралельно — запровадити пакети консультацій: це не потребує ні трафіку, ні реклами, ні найму, а один клієнт із пакетом приносить стільки ж, скільки п'ятеро разових.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Місяць 2</span>
+        <div>
+          <h4>Інфраструктура</h4>
+          <p>Полагодити форму й облік, зібрати базу контактів, зробити безкоштовний перший крок, зібрати відгуки, переписати сайт.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Місяці 2–3</span>
+        <div>
+          <h4>Контент і наповнення «Кола»</h4>
+          <p>Контент-план і зйомка пакетом. Промо до кожного заходу. Зв'язок з учасниками після нього. Ціль: 10–12 учасників замість 5–6 і хоча б одна консультація з кожного «Кола».</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Місяці 3–4</span>
+        <div>
+          <h4>Терапевтична група</h4>
+          <p>Розробити формат і програму, набрати перший склад із тих, хто вже ходить на «Коло». Паралельно — тест онлайн-«Кола» як другого потоку.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-when">Місяць 4+</span>
+        <div>
+          <h4>Реклама</h4>
+          <p>Вмикається останньою. Реклама не створює попит — вона підсилює те, що вже працює. Запускати її, поки заявки не фіксуються й невідома вартість клієнта, означає платити за те, щоб втрачати людей швидше й не знати про це.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="tag">Чесно про час</p>
+    <h2>Що потрібно особисто від Миколи</h2>
+
+    <p><strong>Постійно — три-чотири години на тиждень</strong> поза консультаціями:</p>
+    <ul class="gaps" style="list-style:none">
+      <li><b>Дві години в кадрі раз на два тижні</b><span>Знімальна сесія, з якої виходить контент на два-три тижні вперед.</span></li>
+      <li><b>Кілька голосових із думками по темах</b><span>Сировина, з якої пишуться тексти.</span></li>
+      <li><b>Погодження смислів</b><span>Саме смислів — форму нехай доводять інші.</span></li>
+      <li><b>Півгодинна зустріч раз на тиждень</b><span>Підсумки й план на наступний.</span></li>
+    </ul>
+
+    <p><strong>Одноразово на етапі фундаменту — близько 30 годин</strong>, розкиданих на шість-вісім тижнів: три розмови по півтори години про метод, кейси й досвід, плюс серія коротших звірок.</p>
+
+    <p>Приблизно один робочий день на тиждень. Якщо стільки часу немає — це не привід відмовлятися від системи, але привід переглянути її масштаб: контент-план має бути таким, який реально забезпечується.</p>
+  </div>
+</div>
+
+<div class="band dark">
+  <div class="wrap">
+    <p class="tag">Одна думка на завершення</p>
+    <p class="statement">Різниця не в старанності. У першому випадку зусилля <span class="hl">розсіюються</span>, у другому — <span class="hl">накопичуються.</span></p>
+    <p class="after"><strong>Стихійні дії</strong> — це коли щось робиться тому, що давно нічого не публікували, або тому, що «Коло» вже за тиждень, а анонсу немає. Кожна дія окремо може бути непоганою, але вони не складаються в результат: не пов'язані між собою й ніхто не міряє, що спрацювало.</p>
+    <p class="after"><strong>Система</strong> — це коли кожна дія має відоме місце в ланцюжку, відомий результат і відоме наступне кільце. Пост веде на «Коло». «Коло» веде в групу. Група веде в індивідуальну роботу. І на кожному переході видно, скільки людей пройшло, а скільки ні.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="foot">Цифри ринку — огляди вартості психологічних послуг в Україні, серпень 2026. Розрахунок у розділі «Скільки це може дати» — модель на припущеннях; вони перевіряються двома тижнями обліку заявок. Курс перерахунку — приблизно 42 гривні за долар.</p>
+  </div>
+</div>
+</body>
+</html>
