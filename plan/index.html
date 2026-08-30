@@ -71,7 +71,7 @@
 }
 
 *{box-sizing:border-box}
-html{font-size:clamp(16px, 15.2px + .25vw, 18px)}
+html{font-size:clamp(17px, 16.4px + .2vw, 18.5px)}
 body{
   margin:0;background:var(--bg);color:var(--ink);
   font-family:var(--f);font-size:1rem;line-height:1.6;
@@ -277,19 +277,85 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
 .two p{font-size:.94rem;color:var(--ink-soft);margin:0 0 .5rem}
 .two p:last-child{margin:0}
 @media (min-width:42rem){.two{flex-direction:row}.two>div{flex:1}}
+</style>
+<style>
+/* Індикатор прочитаного */
+.prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:transparent}
+.prog i{display:block;height:100%;width:0;background:var(--bronze);transition:width .1s linear}
+
+/* Зміст на початку */
+.toc{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:1.15rem;margin-top:1.75rem;box-shadow:var(--sh-sm);
+}
+.toc .tt{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.75rem;
+}
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{border-top:1px solid var(--line-soft)}
+.toc li:first-child{border-top:none}
+.toc a{
+  display:flex;gap:.7rem;align-items:baseline;
+  text-decoration:none;color:var(--ink);font-size:.98rem;padding:.6rem 0;
+}
+.toc a::before{
+  counter-increment:t;content:counter(t);
+  color:var(--bronze);font-weight:700;font-size:.8rem;min-width:1.1rem;
+}
+.toc a:active{color:var(--bronze)}
+
+/* Таблиці стовпчиком на вузькому екрані */
+@media (max-width:32rem){
+  .tw{overflow-x:visible}
+  .tw table{min-width:0;display:block}
+  .tw thead{display:none}
+  .tw tbody,.tw tr,.tw td{display:block;width:100%}
+  .tw tr{
+    background:var(--card);border:1px solid var(--line);border-radius:8px;
+    padding:.85rem 1rem;margin-bottom:.6rem;
+  }
+  .tw td{border:none;padding:.1rem 0}
+  .tw td:first-child{font-weight:600;color:var(--ink);margin-bottom:.2rem}
+  .tw td:last-child{font-size:.92rem;color:var(--ink-soft)}
+  .tw tr.total{background:var(--bronze-soft);border-color:var(--bronze)}
+}
 </style></head>
 <body>
 
+
+<div class="prog"><i id="pg"></i></div>
 
 <div class="band">
   <div class="wrap hero">
     <p class="eyebrow">Практика Миколи Олофінського · пропозиція</p>
     <h1>Керований потік клієнтів</h1>
     <p class="lede">Ціль одна: більше клієнтів на індивідуальну роботу — без підняття цін і без збільшення кількості годин. Нижче — як це влаштовано, чому окремі дії цього не дають і що треба зробити, щоб дало.</p>
+
+    <div class="note" style="margin-top:1.75rem">
+      <span class="nt">Якщо коротко — три абзаци</span>
+      <p><strong>Проблема не в кількості зусиль.</strong> Пости, «Коло» й обробка заявок і так робляться. Але вони не пов'язані між собою: пост не готує людину до анонсу, а після «Кола» з учасником не відбувається нічого. Тому результат не накопичується, а щоразу починається з нуля.</p>
+      <p><strong>Рішення — сходи.</strong> Індивідуальна робота коштує в рази більше за середню по ринку, і це нормально для вашого рівня. Але таку суму не платять незнайомцю: між першим постом і консультацією мають бути проміжні кроки. «Коло» вже є таким кроком — бракує того, що до нього і що після.</p>
+      <p><strong>Що це дає.</strong> Заповнене «Коло» подвоює дохід із тієї самої години. Терапевтична група приносить за годину більше, ніж індивідуальна сесія, і водночас готує дев'ятьох людей до неї. А коли ланцюжок працює, стає видно, на якому кроці люди зупиняються — і це вже можна виправляти.</p>
+    </div>
+
+    <nav class="toc">
+      <p class="tt"><span>Що всередині</span><span>≈ 14 хв читання</span></p>
+      <ol>
+        <li><a href="#cil">Ціль</a></li>
+        <li><a href="#systema">Чому окремі дії не дають результату</a></li>
+        <li><a href="#skladovi">З чого складається система</a></li>
+        <li><a href="#kontent">Соцмережі й задача контенту</a></li>
+        <li><a href="#skhody">Сходи до консультації</a></li>
+        <li><a href="#onlain">Онлайн і масштабування</a></li>
+        <li><a href="#plan">План розвитку й обсяг робіт</a></li>
+      </ol>
+    </nav>
   </div>
 </div>
 
-<div class="band tint">
+<div class="band tint" id="cil">
   <div class="wrap">
     <p class="tag">З чого починаємо</p>
     <h2>Ціль — дохід від вашої експертної роботи</h2>
@@ -305,7 +371,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band">
+<div class="band" id="systema">
   <div class="wrap">
     <p class="tag">Головне обґрунтування</p>
     <h2>Чому окремі дії не дають результату</h2>
@@ -336,7 +402,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band tint">
+<div class="band tint" id="skladovi">
   <div class="wrap">
     <p class="tag">Складові</p>
     <h2>З чого складається система</h2>
@@ -390,7 +456,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band">
+<div class="band" id="kontent">
   <div class="wrap">
     <p class="tag">Джерело трафіку</p>
     <h2>Соцмережі — це не присутність, а канал</h2>
@@ -422,7 +488,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band tint">
+<div class="band tint" id="skhody">
   <div class="wrap">
     <p class="tag">Головна конструкція</p>
     <h2>Сходи: як людина доходить до консультації</h2>
@@ -520,7 +586,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band tint">
+<div class="band tint" id="onlain">
   <div class="wrap">
     <p class="tag">Напрямок розвитку</p>
     <h2>Онлайн: частіше, ширше, без прив'язки до Києва</h2>
@@ -543,7 +609,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band">
+<div class="band" id="plan">
   <div class="wrap">
     <p class="tag">Що робити з наявними продуктами</p>
     <h2>План розвитку</h2>
@@ -615,7 +681,7 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
   </div>
 </div>
 
-<div class="band">
+<div class="band" id="obsyag">
   <div class="wrap">
     <p class="tag">Масштаб</p>
     <h2>Скільки це роботи</h2>
@@ -680,5 +746,20 @@ tr.total td{border-top:1.5px solid var(--line);border-bottom:none;font-weight:70
     <p class="foot">Цифри ринку — огляди вартості психологічних послуг в Україні, серпень 2026. Розрахунки вартості години — за курсом приблизно 42 гривні за долар. Оцінки обсягу робіт — робочі вилки, які уточнюються на етапі детального планування.</p>
   </div>
 </div>
+
+<script>
+(function(){
+  var bar = document.getElementById('pg'); if(!bar) return;
+  var t = false;
+  function upd(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? Math.min(100, window.scrollY / h * 100) : 0) + '%';
+    t = false;
+  }
+  addEventListener('scroll', function(){ if(!t){ t = true; requestAnimationFrame(upd); } }, {passive:true});
+  addEventListener('resize', upd, {passive:true});
+  upd();
+})();
+</script>
 </body>
 </html>
