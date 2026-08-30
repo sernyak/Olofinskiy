@@ -1,0 +1,16 @@
+docs/
+prompts/
+site/
+site-v*/
+landing-founders/
+landing_page/
+site_v*/
+.deploy-repo/
+reference_corpus/
+knowledge_base/
+post-generator/
+fb-scraper/
+Olofinskiy_2024/
+.DS_Store
+*.md
+!README.md
