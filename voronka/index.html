@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FCFCFA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131517" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="no-referrer">
+<title>Три кроки до клієнта</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root{
+  --bg:#FCFCFA;
+  --tint:#F1F3F0;
+  --card:#FFFFFF;
+  --ink:#15181B;
+  --soft:#4E545A;
+  --muted:#828990;
+  --line:#E3E5E2;
+  --line-2:#EDEFEC;
+  --acc:#17457A;
+  --acc-wash:#E6EDF6;
+  --warm:#9C5A28;
+  --warm-wash:#F8EDE2;
+  --sh:0 1px 2px rgba(21,24,27,.04), 0 10px 24px -18px rgba(21,24,27,.4);
+  --f:"Onest","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#131517;--tint:#1A1D20;--card:#1D2124;
+    --ink:#EBEDEF;--soft:#C0C5CA;--muted:#8A9198;
+    --line:#2C3135;--line-2:#242829;
+    --acc:#7FAEE0;--acc-wash:#17293C;
+    --warm:#D79B6A;--warm-wash:#33241A;
+    --sh:0 1px 2px rgba(0,0,0,.3), 0 12px 28px -20px #000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131517;--tint:#1A1D20;--card:#1D2124;
+  --ink:#EBEDEF;--soft:#C0C5CA;--muted:#8A9198;
+  --line:#2C3135;--line-2:#242829;
+  --acc:#7FAEE0;--acc-wash:#17293C;
+  --warm:#D79B6A;--warm-wash:#33241A;
+  --sh:0 1px 2px rgba(0,0,0,.3), 0 12px 28px -20px #000;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{font-size:clamp(17px, 16.4px + .2vw, 18.5px)}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--f);font-size:1rem;line-height:1.6;font-weight:400;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+}
+p{margin:0 0 1rem;text-wrap:pretty}
+strong{font-weight:600}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+
+.wrap{
+  max-width:33rem;margin:0 auto;
+  padding-left:max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right:max(1.25rem, env(safe-area-inset-right, 0px));
+}
+section{padding:2.5rem 0}
+section.tint{background:var(--tint)}
+
+/* Hero */
+.hero{padding:3rem 0 2.25rem}
+.kick{
+  font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--acc);margin:0 0 .85rem;
+}
+h1{
+  font-weight:800;font-size:clamp(2rem,9vw,2.9rem);line-height:1.06;
+  letter-spacing:-.03em;margin:0 0 1rem;text-wrap:balance;
+}
+.lede{font-size:1.1rem;line-height:1.5;color:var(--soft);margin:0}
+
+h2{
+  font-weight:700;font-size:clamp(1.35rem,5.5vw,1.7rem);line-height:1.2;
+  letter-spacing:-.02em;margin:0 0 .85rem;text-wrap:balance;
+}
+h3{font-weight:700;font-size:1.05rem;margin:1.75rem 0 .5rem}
+
+/* Steps */
+.steps{margin:1.5rem 0;counter-reset:st}
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:1.25rem 1.15rem 1.25rem 3.4rem;position:relative;box-shadow:var(--sh);
+}
+.step::before{
+  counter-increment:st;content:counter(st);
+  position:absolute;left:1.15rem;top:1.25rem;
+  width:1.7rem;height:1.7rem;border-radius:50%;
+  background:var(--acc);color:#fff;font-weight:700;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.step h4{font-weight:700;font-size:1.12rem;margin:0 0 .15rem;line-height:1.25}
+.step .price{font-size:.86rem;font-weight:600;color:var(--acc);margin:0 0 .55rem}
+.step p{font-size:.95rem;color:var(--soft);margin:0}
+.step .todo{
+  display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:var(--warm-wash);color:var(--warm);padding:.2rem .55rem;border-radius:4px;
+}
+.link{
+  text-align:center;color:var(--muted);font-size:.85rem;
+  padding:.5rem 0;font-weight:500;
+}
+
+/* Lists */
+ul.plain{list-style:none;margin:1.25rem 0;padding:0}
+ul.plain li{
+  padding:.8rem 0 .8rem 1.6rem;border-bottom:1px solid var(--line-2);
+  position:relative;font-size:.97rem;
+}
+ul.plain li:last-child{border-bottom:none}
+ul.plain li::before{
+  content:"";position:absolute;left:0;top:1.35rem;
+  width:.45rem;height:.45rem;border-radius:50%;background:var(--acc);
+}
+ul.plain b{display:block;margin-bottom:.15rem}
+ul.plain span{color:var(--soft);font-size:.92rem}
+
+/* Box */
+.box{
+  background:var(--acc-wash);border-radius:12px;padding:1.2rem 1.15rem;margin:1.5rem 0;
+}
+.box .bt{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--acc);margin:0 0 .55rem;
+}
+.box p{font-size:.95rem;color:var(--soft);margin-bottom:.6rem}
+.box p:last-child{margin-bottom:0}
+.box strong{color:var(--ink)}
+
+.end{
+  border-top:1px solid var(--line);margin-top:2.25rem;padding-top:1.25rem;
+  font-size:.85rem;color:var(--muted);
+}
+@media (min-width:40rem){
+  .wrap{max-width:36rem;padding-left:2rem;padding-right:2rem}
+  section{padding:3.25rem 0}
+  .hero{padding:3.75rem 0 2.75rem}
+}
+</style></head>
+<body>
+
+
+<section>
+  <div class="wrap hero">
+    <p class="kick">Пропозиція щодо залучення клієнтів</p>
+    <h1>Три кроки до клієнта</h1>
+    <p class="lede">Це не готова стратегія, а загальна логіка — як я бачу її з того, що спостерігаю зсередини. Свідомо без деталей: спершу важливо домовитись про сам напрямок, а вже потім розписувати кожен крок.</p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <h2>Що я бачу зараз</h2>
+    <p>Кожен захід ми фактично набираємо з нуля. Публікації виходять тоді, коли є час, анонс з’являється, коли дата вже близько. Люди, які були на «Колі», лишаються в спільноті, але далі з ними нічого не відбувається до наступного анонсу.</p>
+    <p>Через це на «Коло» приходить менше людей, ніж могло б. А ті, хто прийшов і кому сподобалось, не мають зрозумілого наступного кроку — навіть якщо готові йти далі.</p>
+    <p><strong>Мені здається, головне тут не в кількості роботи, а в тому, що кожна дія живе окремо від інших.</strong> Якщо вибудувати їх у послідовність, та сама робота почне давати більше.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Пропоную дивитись на це як на три кроки</h2>
+    <p>Логіка проста: кожен крок готує людину до наступного і робить його природним.</p>
+
+    <div class="steps">
+      <div class="step">
+        <h4>«Чоловіче коло»</h4>
+        <p class="price">2 000 грн</p>
+        <p>Перший крок, куди ми ведемо людей із соцмереж. Тут людина вперше бачить роботу наживо. Задача контенту — вести саме сюди, а не просто бути присутнім у стрічці.</p>
+      </div>
+      <p class="link">↓ на «Колі» розповідаємо про наступний крок</p>
+
+      <div class="step">
+        <h4>Терапевтична група</h4>
+        <p class="price">продукт ще треба зробити</p>
+        <p>Наступний крок для тих, кому на «Колі» відгукнулось і хто хоче працювати глибше. Формат, у якому легше почати, ніж одразу з індивідуальної роботи.</p>
+        <span class="todo">потребує розробки</span>
+      </div>
+      <p class="link">↓ у групі природно виникає запит на індивідуальну роботу</p>
+
+      <div class="step">
+        <h4>Індивідуальні консультації</h4>
+        <p class="price">основний формат</p>
+        <p>Сюди людина приходить уже підготовленою: вона знає вас, бачила роботу й розуміє, за що платить. Тут майже нічого не треба продавати.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <p class="bt">Чому саме так</p>
+      <p>Зараз між «побачив публікацію» і «записався на консультацію» немає нічого проміжного. Це великий крок, і більшість його не робить — не тому, що не хоче, а тому що зарано.</p>
+      <p>Коли кроки є, людина рухається поступово — і на кожному етапі ми бачимо, скільки людей пішло далі, а скільки зупинилось.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <h2>Окремо — онлайн-формат</h2>
+    <p>Це не обов’язково «Коло» в інтернеті. Радше окрема зустріч: коротша, дешевша й на значно більшу кількість людей.</p>
+
+    <ul class="plain">
+      <li><b>Приблизно година — година з половиною</b><span>Коротший формат, ніж «Коло»</span></li>
+      <li><b>Умовно 500 грн</b><span>Нижчий поріг, щоб людині було легко спробувати</span></li>
+      <li><b>50–60 учасників</b><span>Онлайн не обмежений розміром зали</span></li>
+      <li><b>Раз на два тижні або раз на місяць</b><span>Частіший контакт з аудиторією, ніж зараз</span></li>
+    </ul>
+
+    <p>Що це дає, окрім самого доходу: сюди можуть потрапити ті, хто фізично не може приїхати до Києва, і ті, хто ще не готовий одразу йти на живий захід. А далі частина з них приходить на «Коло» і в групу.</p>
+    <p>За часом це приблизно <strong>півтори години раз на два тижні</strong>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Що для цього треба зробити</h2>
+    <p>Тут теж грубими мазками — детально можна розписати, коли домовимось про сам напрямок.</p>
+
+    <ul class="plain">
+      <li><b>Вести соцмережі під конкретну задачу</b><span>Щоб публікації виходили регулярно й вели в одну точку — на «Коло». Зараз вони виходять окремо одна від одної</span></li>
+      <li><b>Розробити терапевтичну групу як продукт</b><span>Для кого вона, про що і який результат дає. Без цих трьох відповідей її неможливо ні описати, ні продати</span></li>
+      <li><b>Працювати зі спільнотою між заходами</b><span>Зараз там з’являється тільки анонс. Людей, які вже були, у нас чимало — це найтепліша аудиторія, яка є</span></li>
+      <li><b>Зв’язуватись з учасниками після «Кола»</b><span>Через кілька днів, поки враження свіже</span></li>
+      <li><b>Вести облік заявок</b><span>Щоб бачити, скільки їх і звідки люди приходять. Зараз ми цього просто не знаємо</span></li>
+      <li><b>Спробувати онлайн-формат</b><span>Один пробний захід покаже, чи збирається аудиторія</span></li>
+    </ul>
+
+    <div class="box">
+      <p class="bt">Про рекламу</p>
+      <p>Платне просування може добре спрацювати на «Коло». Але для цього потрібні окремі рекламні макети зі своєю задачею, а не просування вже готової публікації — це різні речі й різний результат.</p>
+      <p>Тому рекламу варто вмикати тоді, коли є що просувати і куди вести.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <h2>На перспективу</h2>
+    <p>Коли навколо всього цього збереться постійна аудиторія, з’являється сенс записати онлайн-курс. Його головна перевага в тому, що він продається без витрат вашого часу: записали один раз — продається далі.</p>
+    <p>Але це має сенс тоді, коли вже зрозуміло, які теми людям справді потрібні, і є кому продавати. Тобто не зараз, а як наступний етап.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Що пропоную зробити першим</h2>
+    <p>Домовитись про саму логіку — чи рухаємось ми в цьому напрямку. Якщо так, далі можна спокійно розписати кожен крок окремо: що робимо з «Колом», як виглядає терапевтична група, як запускаємо онлайн-формат.</p>
+    <p>Мені здається, найважливіше зараз — не почати робити більше, а почати робити пов’язано.</p>
+
+    <p class="end">Це попередній начерк, а не готовий план. Я не маркетолог, тож описала логіку так, як бачу її зсередини роботи. Якщо напрямок правильний — деталі можна опрацювати далі.</p>
+  </div>
+</section>
+</body>
+</html>
