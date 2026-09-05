@@ -244,8 +244,122 @@ h2{
 }
 @media (min-width:52rem){.kbd{display:inline}}
 
+
+/* ── Розрив між постом і консультацією ─────────────── */
+.gapv{display:flex;align-items:center;gap:clamp(.5rem,2vw,1.5rem);margin-top:clamp(1.5rem,4vh,2.5rem)}
+.gapv .end-n{
+  flex:none;background:var(--surf);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(.9rem,1.8vw,1.35rem) clamp(1rem,2vw,1.5rem);text-align:center;min-width:9rem;
+}
+.gapv .end-n .t{font-size:clamp(.85rem,1.25vw,1rem);color:var(--soft)}
+.gapv .end-n .v{font-family:var(--f-d);font-weight:600;font-size:clamp(1rem,1.6vw,1.3rem);margin-top:.3rem}
+.gapv .end-n.b{border-color:#4A3A18;background:#1C160B}
+.gapv .end-n.b .v{color:var(--gold)}
+.gapv .void{
+  flex:1;text-align:center;border-top:2px dashed #3A4453;position:relative;height:1px;
+}
+.gapv .void span{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  background:var(--bg);padding:0 .9rem;color:var(--coral);
+  font-size:clamp(.85rem,1.3vw,1.05rem);font-weight:600;white-space:nowrap;
+}
+
+/* ── Воронка у формі воронки ───────────────────────── */
+.fnl{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.5rem}
+.fl{
+  margin:0 auto;border-radius:8px;width:var(--w);
+  padding:clamp(.6rem,1.4vh,.9rem) 1rem;text-align:center;
+  font-size:clamp(.88rem,1.3vw,1.05rem);font-weight:500;
+  transform:scaleX(.2);transform-origin:center;opacity:0;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1), opacity .4s ease;
+}
+.on .fl{transform:none;opacity:1}
+.on .fl:nth-child(2){transition-delay:.1s}
+.on .fl:nth-child(3){transition-delay:.2s}
+.on .fl:nth-child(4){transition-delay:.3s}
+.fl.a{background:#232B37;color:var(--soft)}
+.fl.b{background:#2C3644;color:var(--ink)}
+.fl.c{background:#4C6480;color:#fff}
+.fl.d{background:var(--gold);color:#1A1206;font-weight:600}
+
+/* ── Коло місць ────────────────────────────────────── */
+.rings{display:grid;gap:clamp(1rem,3vw,2.5rem);margin-top:clamp(1rem,2.5vh,1.75rem)}
+@media (min-width:44rem){.rings{grid-template-columns:1fr 1fr}}
+.ring-box{text-align:center}
+.ring{position:relative;width:clamp(9rem,19vh,13rem);height:clamp(9rem,19vh,13rem);margin:0 auto}
+.ring i{
+  position:absolute;left:50%;top:50%;width:.85rem;height:.85rem;border-radius:50%;
+  margin:-.425rem 0 0 -.425rem;
+  transform:rotate(var(--a)) translateY(calc(-1 * clamp(4rem,8.6vh,5.9rem)));
+  border:1.5px solid #3A4453;background:transparent;
+}
+.ring i.f{background:var(--gold);border-color:var(--gold)}
+.ring i.c{background:var(--coral);border-color:var(--coral)}
+.ring-box .cap{margin-top:.9rem;font-size:clamp(.9rem,1.35vw,1.05rem);color:var(--soft)}
+.ring-box .cap b{display:block;font-family:var(--f-d);font-weight:600;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ink);margin-bottom:.2rem}
+
+/* ── Порівняння масштабу ───────────────────────────── */
+.scale{display:grid;gap:clamp(1rem,2.5vw,2rem);margin-top:clamp(1.25rem,3vh,2rem)}
+@media (min-width:44rem){.scale{grid-template-columns:1fr 1fr}}
+.sc{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:clamp(1rem,2vw,1.4rem)}
+.sc.g{border-color:#1D3A34;background:#111A18}
+.sc .sc-h{font-size:clamp(.88rem,1.3vw,1rem);color:var(--soft);margin-bottom:.7rem}
+.sc .dotgrid{display:flex;flex-wrap:wrap;gap:.3rem}
+.sc .dotgrid i{width:.6rem;height:.6rem;border-radius:50%;background:#4C6480}
+.sc.g .dotgrid i{background:var(--teal)}
+.sc .sc-n{font-family:var(--f-d);font-weight:700;font-size:clamp(1.3rem,2.4vw,1.9rem);margin-top:.8rem}
+.sc.g .sc-n{color:var(--teal)}
+
+/* ── Шлях стадіями ─────────────────────────────────── */
+.path{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.4rem}
+@media (min-width:56rem){.path{flex-direction:row;align-items:flex-start;gap:0}}
+.st{flex:1;position:relative;padding:0 .3rem}
+.st .dot{
+  width:.9rem;height:.9rem;border-radius:50%;background:#3A4453;
+  margin:0 auto .7rem;position:relative;z-index:2;
+}
+.st:last-child .dot{background:var(--gold);box-shadow:0 0 0 5px var(--gold-dim)}
+.st::before{
+  content:"";position:absolute;top:.4rem;left:0;right:0;height:2px;background:#252C39;z-index:1;
+}
+.st:first-child::before{left:50%}
+.st:last-child::before{right:50%}
+.st p{font-size:clamp(.82rem,1.15vw,.95rem);color:var(--soft);text-align:center;line-height:1.35}
+@media (max-width:55.99rem){
+  .st{display:flex;gap:.8rem;align-items:center;padding:0}
+  .st::before{display:none}
+  .st .dot{margin:0}
+  .st p{text-align:left}
+}
+
+/* ── Компетенції ───────────────────────────────────── */
+.comp{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:clamp(1.25rem,3vh,1.9rem)}
+@media (min-width:44rem){.comp{grid-template-columns:repeat(3,1fr)}}
+.cq{
+  background:var(--surf);border:1px solid var(--line);border-radius:10px;
+  padding:clamp(.75rem,1.6vw,1.05rem);text-align:center;
+}
+.cq .cn{font-size:clamp(.85rem,1.25vw,1rem);font-weight:600}
+.cq .cs{font-size:clamp(.72rem,1vw,.82rem);color:var(--dim);margin-top:.2rem}
+
+/* ── Часова шкала ──────────────────────────────────── */
+.tml{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.55rem}
+@media (min-width:56rem){.tml{flex-direction:row;gap:.5rem}}
+.tm{
+  flex:1;background:var(--surf);border:1px solid var(--line);border-radius:12px;
+  padding:clamp(.85rem,1.7vw,1.2rem);border-top:3px solid var(--line);
+}
+.tm.n1{border-top-color:var(--teal)}
+.tm.n2{border-top-color:#4C6480}
+.tm.n3{border-top-color:var(--gold)}
+.tm.n4{border-top-color:#6B7484}
+.tm .tw{font-size:clamp(.68rem,1vw,.76rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:.35rem}
+.tm .tn{font-family:var(--f-d);font-weight:600;font-size:clamp(.95rem,1.4vw,1.12rem);line-height:1.25}
+.tm .td{font-size:clamp(.8rem,1.1vw,.9rem);color:var(--soft);margin-top:.4rem;line-height:1.4}
+
 @media (prefers-reduced-motion:reduce){
-  .slide,.b-fill,.bar-top i{transition:none}
+  .slide,.b-fill,.bar-top i,.fl{transition:none}
+  .fl{transform:none;opacity:1}
 }
 </style></head>
 <body>
@@ -310,8 +424,12 @@ h2{
     <div class="inner">
       <p class="eyebrow">Головна причина</p>
       <h2>Між публікацією і консультацією<br>немає нічого <span class="hi-c">проміжного</span></h2>
-      <p class="lead">Це надто великий крок за один раз. Більшість його не робить — не тому, що не хоче, а тому що зарано.</p>
-      <p class="lead tight">Людина має спершу побачити роботу зблизька і зрозуміти, за що платить. Це не виникає з одного поста.</p>
+      <div class="gapv">
+        <div class="end-n"><p class="t">Побачив</p><p class="v">пост у стрічці</p></div>
+        <div class="void"><span>← надто великий крок →</span></div>
+        <div class="end-n b"><p class="t">Записався</p><p class="v">$300 за сесію</p></div>
+      </div>
+      <p class="lead">Більшість цього кроку не робить — не тому, що не хоче, а тому що зарано. Людина має спершу побачити роботу зблизька і зрозуміти, за що платить.</p>
     </div>
   </section>
 
@@ -350,6 +468,21 @@ h2{
         </div>
       </div>
       <p class="foot-note">Кожен крок продає наступний. Швидкі шляхи це не забороняє.</p>
+    </div>
+  </section>
+
+  <!-- 5b ────────────────────────────────────────────── -->
+  <section class="slide">
+    <div class="inner">
+      <p class="eyebrow">Як це працює</p>
+      <h2>На кожному кроці лишається менше —<br>і це нормально</h2>
+      <div class="fnl">
+        <div class="fl a" style="--w:100%">Побачили в соцмережах</div>
+        <div class="fl b" style="--w:62%">Прийшли на «Коло»</div>
+        <div class="fl c" style="--w:36%">Пішли в терапевтичну групу</div>
+        <div class="fl d" style="--w:20%">Індивідуальна робота</div>
+      </div>
+      <p class="foot-note">Пропорції умовні. Реальні зʼявляться, щойно почнемо рахувати заявки, — і тоді стане видно, на якому переході втрачаємо найбільше.</p>
     </div>
   </section>
 
@@ -410,10 +543,17 @@ h2{
         <span class="chip"><b>50–60 учасників</b></span>
         <span class="chip">раз на <b>2 тижні</b></span>
       </div>
-      <div class="pts">
-        <div class="pt t"><i></i><span>Немає обмеження Києвом — і ті, хто виїхав, теж можуть бути</span></div>
-        <div class="pt t"><i></i><span>Нижчий поріг: легше спробувати вперше</span></div>
-        <div class="pt t"><i></i><span>Звідси люди йдуть на живе «Коло» і в групу</span></div>
+      <div class="scale">
+        <div class="sc">
+          <p class="sc-h">Офлайн — обмежено залою</p>
+          <div class="dotgrid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="sc-n">15–20 осіб</p>
+        </div>
+        <div class="sc g">
+          <p class="sc-h">Онлайн — обмежень немає</p>
+          <div class="dotgrid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="sc-n">50–60 осіб</p>
+        </div>
       </div>
       <p class="foot-note">Часу: <span class="hi">півтори години раз на два тижні</span></p>
     </div>
@@ -455,19 +595,33 @@ h2{
     <div class="inner">
       <p class="eyebrow">Головний висновок із цифр</p>
       <h2>Те саме «Коло».<br>Ті самі чотири години.</h2>
-      <div class="nums">
-        <div class="num c">
-          <p class="n-cap">5–6 учасників</p>
-          <p class="n-big">2 750 ₴</p>
-          <p class="n-sub">за годину</p>
+      <div class="rings">
+        <div class="ring-box">
+          <div class="ring"><i class="c" style="--a:0deg"></i><i class="c" style="--a:18deg"></i><i class="c" style="--a:36deg"></i><i class="c" style="--a:54deg"></i><i class="c" style="--a:72deg"></i><i class="c" style="--a:90deg"></i><i style="--a:108deg"></i><i style="--a:126deg"></i><i style="--a:144deg"></i><i style="--a:162deg"></i><i style="--a:180deg"></i><i style="--a:198deg"></i><i style="--a:216deg"></i><i style="--a:234deg"></i><i style="--a:252deg"></i><i style="--a:270deg"></i><i style="--a:288deg"></i><i style="--a:306deg"></i><i style="--a:324deg"></i><i style="--a:342deg"></i></div>
+          <p class="cap"><b>2 750 ₴ / год</b>зайнято 6 місць із 20</p>
         </div>
-        <div class="num g">
-          <p class="n-cap">15–20 учасників</p>
-          <p class="n-big">8 750 ₴</p>
-          <p class="n-sub">за годину</p>
+        <div class="ring-box">
+          <div class="ring"><i class="f" style="--a:0deg"></i><i class="f" style="--a:18deg"></i><i class="f" style="--a:36deg"></i><i class="f" style="--a:54deg"></i><i class="f" style="--a:72deg"></i><i class="f" style="--a:90deg"></i><i class="f" style="--a:108deg"></i><i class="f" style="--a:126deg"></i><i class="f" style="--a:144deg"></i><i class="f" style="--a:162deg"></i><i class="f" style="--a:180deg"></i><i class="f" style="--a:198deg"></i><i class="f" style="--a:216deg"></i><i class="f" style="--a:234deg"></i><i class="f" style="--a:252deg"></i><i class="f" style="--a:270deg"></i><i class="f" style="--a:288deg"></i><i class="f" style="--a:306deg"></i><i style="--a:324deg"></i><i style="--a:342deg"></i></div>
+          <p class="cap"><b>8 750 ₴ / год</b>зайнято 18 місць із 20</p>
         </div>
       </div>
       <p class="foot-note">Різниця не в якості заходу. Різниця тільки в кількості людей у залі.</p>
+    </div>
+  </section>
+
+  <!-- 11b ──────────────────────────────────────────── -->
+  <section class="slide">
+    <div class="inner">
+      <p class="eyebrow">Шлях людини</p>
+      <h2>П’ять станів, які людина проходить</h2>
+      <div class="path">
+        <div class="st"><div class="dot"></div><p>Не знає про проблему</p></div>
+        <div class="st"><div class="dot"></div><p>Усвідомила проблему</p></div>
+        <div class="st"><div class="dot"></div><p>Шукає рішення</p></div>
+        <div class="st"><div class="dot"></div><p>Обирає фахівця</p></div>
+        <div class="st"><div class="dot"></div><p>Готова звернутись</p></div>
+      </div>
+      <p class="lead">Контент для людини на першому стані й на четвертому — це різний контент. Той, хто ще не назвав свою проблему, не відреагує на анонс заходу.</p>
     </div>
   </section>
 
@@ -526,17 +680,22 @@ h2{
       <div class="two">
         <div class="col">
           <h3>Разово</h3>
-          <p>Розпаковка експерта · дослідження аудиторії · позиціювання · розробка продуктів</p>
-          <p>Упаковка: сайт, описи, облік заявок, відгуки</p>
+          <p>Розпаковка · дослідження аудиторії · позиціювання · розробка продуктів · упаковка й облік заявок</p>
         </div>
         <div class="col">
           <h3>Регулярно</h3>
-          <p>Контент: план, сценарії, зйомка, монтаж, публікація</p>
-          <p>«Коло»: залучення, реєстрація, робота зі спільнотою</p>
-          <p>Заявки, аналітика, реклама</p>
+          <p>Контент · «Коло»: залучення й реєстрація · робота зі спільнотою · заявки · аналітика · реклама</p>
         </div>
       </div>
-      <p class="foot-note">Це шість різних спеціальностей. Наймати шістьох не треба — близькі ролі поєднуються, і підключати їх можна поступово.</p>
+      <div class="comp">
+        <div class="cq"><p class="cn">Стратегія</p><p class="cs">план і аналітика</p></div>
+        <div class="cq"><p class="cn">Тексти</p><p class="cs">пости й сценарії</p></div>
+        <div class="cq"><p class="cn">Зйомка</p><p class="cs">камера, світло, звук</p></div>
+        <div class="cq"><p class="cn">Монтаж</p><p class="cs">нарізка й адаптація</p></div>
+        <div class="cq"><p class="cn">Дизайн</p><p class="cs">банери й візуал</p></div>
+        <div class="cq"><p class="cn">Адміністрування</p><p class="cs">заявки й логістика</p></div>
+      </div>
+      <p class="foot-note">Частину можна поєднати в одних руках — але не все: кожній із цих речей вчаться окремо.</p>
     </div>
   </section>
 
@@ -548,6 +707,37 @@ h2{
       <p class="lead">Записали один раз — продається роками, без витрат часу. За доходом на витрачену годину це найвигідніший формат із можливих.</p>
       <p class="lead tight">Але це має сенс тоді, коли вже зібралась аудиторія і зрозуміло, які теми людям справді потрібні.</p>
       <p class="foot-note">Не зараз. Наступний етап — коли працює все попереднє.</p>
+    </div>
+  </section>
+
+  <!-- 16b ───────────────────────────────────────────── -->
+  <section class="slide">
+    <div class="inner">
+      <p class="eyebrow">Послідовність</p>
+      <h2>У якому порядку</h2>
+      <div class="tml">
+        <div class="tm n1">
+          <p class="tw">Зараз</p>
+          <p class="tn">Порахувати</p>
+          <p class="td">Облік заявок і цифри практики. Без бюджету й без найму</p>
+        </div>
+        <div class="tm n2">
+          <p class="tw">Далі</p>
+          <p class="tn">Фундамент</p>
+          <p class="td">Аудиторія, продукти, упаковка. Розробка терапевтичної групи</p>
+        </div>
+        <div class="tm n3">
+          <p class="tw">Потім</p>
+          <p class="tn">Наповнення</p>
+          <p class="td">Системний контент із фокусом на «Коло». Онлайн-формат</p>
+        </div>
+        <div class="tm n4">
+          <p class="tw">Коли працює</p>
+          <p class="tn">Підсилення</p>
+          <p class="td">Реклама, масштабування, курс</p>
+        </div>
+      </div>
+      <p class="foot-note">Реклама йде останньою: вона підсилює те, що вже працює, і не створює попит сама по собі.</p>
     </div>
   </section>
 
