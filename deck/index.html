@@ -125,7 +125,7 @@ h2{
   .flow{flex-direction:row;align-items:stretch;gap:.35rem}
 }
 .node{
-  flex:1;background:var(--surf);border:1px solid var(--line);border-radius:14px;
+  flex:1;min-width:0;overflow-wrap:break-word;background:var(--surf);border:1px solid var(--line);border-radius:14px;
   padding:clamp(.9rem,1.8vw,1.35rem);position:relative;
 }
 .node .n-top{
@@ -258,6 +258,7 @@ h2{
 .gapv .void{
   flex:1;text-align:center;border-top:2px dashed #3A4453;position:relative;height:1px;
 }
+.gapv .void span i.ar{font-style:normal}
 .gapv .void span{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   background:var(--bg);padding:0 .9rem;color:var(--coral);
@@ -268,6 +269,7 @@ h2{
 .fnl{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.35rem}
 .fl{
   margin:0 auto;border-radius:8px;width:var(--w);
+  overflow-wrap:anywhere;min-width:0;
   padding:clamp(.6rem,1.4vh,.9rem) 1rem;text-align:center;
   font-size:clamp(.88rem,1.3vw,1.05rem);font-weight:500;
   transform:scaleX(.2);transform-origin:center;opacity:0;
@@ -315,7 +317,7 @@ h2{
 /* ── Шлях стадіями ─────────────────────────────────── */
 .path{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.3rem}
 @media (min-width:56rem){.path{flex-direction:row;align-items:flex-start;gap:0}}
-.st{flex:1;position:relative;padding:0 .3rem}
+.st{flex:1;min-width:0;overflow-wrap:break-word;position:relative;padding:0 .3rem}
 .st .dot{
   width:.9rem;height:.9rem;border-radius:50%;background:#3A4453;
   margin:0 auto .7rem;position:relative;z-index:2;
@@ -348,7 +350,7 @@ h2{
 .tml{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.4rem}
 @media (min-width:56rem){.tml{flex-direction:row;gap:.5rem}}
 .tm{
-  flex:1;background:var(--surf);border:1px solid var(--line);border-radius:12px;
+  flex:1;min-width:0;overflow-wrap:break-word;background:var(--surf);border:1px solid var(--line);border-radius:12px;
   padding:clamp(.85rem,1.7vw,1.2rem);border-top:3px solid var(--line);
 }
 .tm.n1{border-top-color:var(--teal)}
@@ -389,8 +391,18 @@ h2{
   .viz-box{padding:.85rem 1rem}
   .tm{padding:.65rem .85rem}
   .tm .td{font-size:.78rem;margin-top:.25rem}
-  .gapv .end-n{min-width:0;padding:.7rem .8rem}
-  .gapv .void span{font-size:.72rem;padding:0 .4rem}
+  .gapv{flex-direction:column;gap:.4rem}
+  .gapv .end-n{min-width:0;width:100%;padding:.7rem .8rem}
+  .gapv .void{
+    width:1px;height:2.3rem;flex:none;margin:0 auto;
+    border-top:none;border-left:2px dashed #3A4453;
+  }
+  .gapv .void span{font-size:.78rem;padding:0 .6rem}
+  .gapv .void span i.ar{display:none}
+  .fnl .fl:nth-child(1){width:100%}
+  .fnl .fl:nth-child(2){width:86%}
+  .fnl .fl:nth-child(3){width:72%}
+  .fnl .fl:nth-child(4){width:58%}
   .fl{padding:.5rem .75rem;font-size:.82rem}
   .bar .b-lab{font-size:.82rem;gap:.5rem}
   .ring-box .cap{font-size:.82rem;margin-top:.6rem}
@@ -456,6 +468,11 @@ h2{
   .st p{text-align:center}
   .node .n-desc{font-size:.74rem;line-height:1.3}
   .tm .tn{font-size:.9rem}
+  .gapv{flex-direction:row;gap:.4rem}
+  .gapv .end-n{width:auto;flex:0 1 auto;padding:.45rem .6rem;min-width:0}
+  .gapv .void{width:auto;height:1px;flex:1;margin:0;border-left:none;border-top:2px dashed #3A4453}
+  .gapv .void span{font-size:.68rem;padding:0 .35rem}
+  .gapv .void span i.ar{display:inline}
   .viz{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr 1fr}
   .scale{grid-template-columns:1fr 1fr}
@@ -556,7 +573,7 @@ h2{
       <h2>Між публікацією і консультацією<br>немає нічого <span class="hi-c">проміжного</span></h2>
       <div class="gapv">
         <div class="end-n"><p class="t">Побачив</p><p class="v">пост у стрічці</p></div>
-        <div class="void"><span>← надто великий крок →</span></div>
+        <div class="void"><span><i class="ar">←</i> надто великий крок <i class="ar">→</i></span></div>
         <div class="end-n b"><p class="t">Записався</p><p class="v">$300 за сесію</p></div>
       </div>
       <p class="lead">Більшість цього кроку не робить — не тому, що не хоче, а тому що зарано. Людина має спершу побачити роботу зблизька і зрозуміти, за що платить.</p>
