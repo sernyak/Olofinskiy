@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Каталог сторінок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --ground:   #EDEDE8;
+  --surface:  #FBFBF9;
+  --ink:      #1C1B18;
+  --ink-soft: #575550;
+  --ink-mute: #85827A;
+  --rule:     #D6D5CE;
+  --rule-soft:#E3E2DB;
+  --accent:   #A87C3C;
+  --ok:       #3D6B4C;
+  --warn:     #8A6115;
+  --warn-bg:  #F5EFE0;
+  --shadow:   0 1px 2px rgba(28,27,24,.05), 0 8px 24px -16px rgba(28,27,24,.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:   #151513;
+    --surface:  #1D1D1A;
+    --ink:      #EDEBE4;
+    --ink-soft: #B3AFA5;
+    --ink-mute: #8B877C;
+    --rule:     #34332D;
+    --rule-soft:#282723;
+    --accent:   #D6AC70;
+    --ok:       #86AF92;
+    --warn:     #D2AC5E;
+    --warn-bg:  #262017;
+    --shadow:   0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:   #151513;
+  --surface:  #1D1D1A;
+  --ink:      #EDEBE4;
+  --ink-soft: #B3AFA5;
+  --ink-mute: #8B877C;
+  --rule:     #34332D;
+  --rule-soft:#282723;
+  --accent:   #D6AC70;
+  --ok:       #86AF92;
+  --warn:     #D2AC5E;
+  --warn-bg:  #262017;
+  --shadow:   0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--ground); }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; }
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+/* ---------- шапка ---------- */
+
+.eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(30px, 5.2vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 28px;
+}
+
+.checked {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  padding: 12px 0 0;
+  border-top: 1px solid var(--rule);
+}
+.checked b { color: var(--ok); font-weight: 500; }
+
+/* ---------- секції ---------- */
+
+section { margin-top: 54px; }
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+
+.count {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+
+.sec-note {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 6px 0 18px;
+  max-width: 68ch;
+}
+
+/* ---------- реєстр ---------- */
+
+.register {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 24px;
+  padding: 18px 22px 18px 19px;
+  border-left: 3px solid transparent;
+  border-top: 1px solid var(--rule-soft);
+}
+.entry:first-child { border-top: none; }
+
+.register--docs    .entry { border-left-color: var(--accent); }
+.register--site    .entry { border-left-color: var(--rule); }
+.register--foreign .entry { border-left-color: transparent; }
+
+.entry-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  margin: 0;
+  grid-column: 1;
+}
+
+.entry-what {
+  grid-column: 1;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.entry a.addr {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(168, 124, 60, .35);
+  word-break: break-all;
+}
+.entry a.addr:hover { border-bottom-color: var(--accent); }
+.entry a.addr:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.addr-line { grid-column: 1; margin: 2px 0 4px; }
+
+.meta {
+  grid-column: 1;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  margin: 4px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+}
+
+.chip {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 4px 9px;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  color: var(--ink-mute);
+}
+.chip--ok   { color: var(--ok);   border-color: rgba(61, 107, 76, .4); }
+.chip--warn { color: var(--warn); border-color: rgba(138, 97, 21, .45); background: var(--warn-bg); }
+
+.flag {
+  grid-column: 1 / -1;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--warn);
+  margin: 8px 0 0;
+  padding-left: 15px;
+  position: relative;
+  max-width: 68ch;
+}
+.flag::before {
+  content: "\25B8";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  background: var(--warn-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+.flag code { background: none; padding: 0; color: inherit; font-size: 12.5px; }
+
+/* ---------- проблеми ---------- */
+
+.issues {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.issue {
+  background: var(--surface);
+  padding: 18px 22px;
+  display: grid;
+  gap: 5px;
+}
+
+.issue h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -.005em;
+}
+
+.issue p { margin: 0; font-size: 14.5px; color: var(--ink-soft); max-width: 70ch; }
+
+.proof {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  margin-top: 3px;
+  word-break: break-word;
+}
+
+/* ---------- як оновлювати ---------- */
+
+.howto-box {
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--surface);
+  padding: 20px 22px;
+}
+.howto-box p { margin: 0 0 12px; font-size: 14.5px; color: var(--ink-soft); max-width: 68ch; }
+.howto-box p:last-child { margin-bottom: 0; }
+.howto-box strong { color: var(--ink); }
+
+footer {
+  margin-top: 56px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  line-height: 1.7;
+}
+
+@media (max-width: 620px) {
+  .wrap { padding: 40px 18px 72px; }
+  .entry { grid-template-columns: 1fr; padding: 16px 16px 16px 14px; }
+  .chip { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 6px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <p class="eyebrow">Микола Олофінський · службовий каталог</p>
+  <h1>Каталог сторінок</h1>
+  <p class="lede">
+    Усе, що зараз опубліковано по проєкту: що це за сторінка, скільки її читати,
+    коли її востаннє правили і де лежить вихідник, який треба правити.
+  </p>
+
+  <div class="checked">
+    <span>перевірено запитом 5 вересня 2026</span>
+    <span>8 адрес · <b>усі віддають 200</b></span>
+  </div>
+
+  <!-- ========== ДОКУМЕНТИ ========== -->
+  <section>
+    <div class="sec-head">
+      <h2>Документи</h2>
+      <span class="count">3 сторінки</span>
+    </div>
+    <p class="sec-note">
+      Три документи про одне й те саме — систему залучення клієнтів. Різняться
+      глибиною: короткий начерк, презентація для показу з екрана, повний розбір
+      як довідник.
+    </p>
+
+    <div class="register register--docs">
+
+      <div class="entry">
+        <h3 class="entry-name">Три кроки до клієнта</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/voronka/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/voronka/</a>
+        </div>
+        <span class="chip">начерк</span>
+        <p class="entry-what">
+          Найкоротший документ: три кроки, якими людина рухається до
+          індивідуальної консультації, і що заважає на кожному. Без цифр і
+          теорії — тільки те, що видно зсередини роботи.
+        </p>
+        <p class="meta">
+          <span>&#8776; 730 слів · 5 хв</span>
+          <span>оновлено 01.09.2026</span>
+          <span>вихідник docs/try-kroky.html</span>
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3 class="entry-name">Система залучення клієнтів</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/deck/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/deck/</a>
+        </div>
+        <span class="chip">презентація</span>
+        <p class="entry-what">
+          Двадцять один слайд для показу з екрана: навігація стрілками, темна
+          тема, графіка — воронка, заповненість місць, шлях людини, часова
+          шкала. Адаптована й під телефон, вертикально й горизонтально.
+        </p>
+        <p class="meta">
+          <span>21 слайд</span>
+          <span>оновлено 05.09.2026</span>
+          <span>вихідник docs/prezentatsiya.html</span>
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3 class="entry-name">Керований потік клієнтів</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/plan/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/plan/</a>
+        </div>
+        <span class="chip">довідник</span>
+        <p class="entry-what">
+          Найповніший документ проєкту: воронка цілком, продукти й ціни,
+          розрахунок доходу на годину для кожного формату, послідовність кроків.
+          Верстка під читання з телефона.
+        </p>
+        <p class="meta">
+          <span>&#8776; 3 850 слів · 25 хв</span>
+          <span>оновлено 31.08.2026</span>
+          <span>вихідник docs/shlyah-do-konsultatsii.html</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== САЙТ ========== -->
+  <section>
+    <div class="sec-head">
+      <h2>Сайт</h2>
+      <span class="count">4 сторінки</span>
+    </div>
+    <p class="sec-note">
+      Тут головна плутанина: три різні покоління візитки живуть одночасно за
+      трьома адресами, і жодна сторінка сайту не посилається на іншу.
+    </p>
+
+    <div class="register register--site">
+
+      <div class="entry">
+        <h3 class="entry-name">Візитка — головна адреса</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/</a>
+        </div>
+        <span class="chip chip--warn">не та версія</span>
+        <p class="entry-what">
+          Те, що бачить кожен, хто переходить із Facebook або Instagram. Єдина
+          адреса сайту, яку хтось справді відкриває.
+        </p>
+        <p class="meta">
+          <span>&#8776; 1 060 слів</span>
+          <span>оновлено 17.06.2026</span>
+          <span>файли index.html + style.css</span>
+        </p>
+        <p class="flag">
+          Це <em>не</em> та версія, яку правили останньою. Текст відрізняється
+          від <code>/v6/</code>: тут «Війна. Реальні люди», у v6 — «Бізнес.
+          Війна. Реальні люди».
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3 class="entry-name">Візитка v6 — найновіша</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/v6/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/v6/</a>
+        </div>
+        <span class="chip chip--warn">ніхто не заходить</span>
+        <p class="entry-what">
+          Найсвіжіше покоління візитки — саме її правили в останню чергу: кнопка
+          заклику, мобільне hero-фото, липке меню. Але лежить за адресою, на яку
+          нізвідки немає посилання.
+        </p>
+        <p class="meta">
+          <span>&#8776; 1 070 слів</span>
+          <span>оновлено 18.06.2026</span>
+          <span>правиться напряму, окремого вихідника немає</span>
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3 class="entry-name">Візитка v5 — попереднє покоління</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/v5/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/v5/</a>
+        </div>
+        <span class="chip">застаріле</span>
+        <p class="entry-what">
+          Стара версія, яку не прибрали. Живе й доступна кожному, хто знає
+          адресу.
+        </p>
+        <p class="meta">
+          <span>оновлено 17.06.2026</span>
+          <span>кандидат на видалення</span>
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3 class="entry-name">Конверсійний лендінг</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/landing/" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/landing/</a>
+        </div>
+        <span class="chip chip--warn">форма не працює</span>
+        <p class="entry-what">
+          Окрема сторінка під заявку на консультацію — «психотерапія високого
+          рівня для успішних чоловіків». Блок відгуків у ній прихований: там досі
+          стоять зразки тексту, а не справжні відгуки.
+        </p>
+        <p class="meta">
+          <span>&#8776; 1 130 слів</span>
+          <span>оновлено 16.06.2026</span>
+          <span>не має посилання ні з візитки, ні з соцмереж</span>
+        </p>
+        <p class="flag">
+          Форма заявки не надсилає нікуди: копіює текст у буфер обміну й
+          відкриває Facebook. Якщо на лендінг піде трафік, заявки не буде видно
+          ніде.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== СТОРОННЄ ========== -->
+  <section>
+    <div class="sec-head">
+      <h2>Стороннє на домені</h2>
+      <span class="count">1 сторінка</span>
+    </div>
+
+    <div class="register register--foreign">
+      <div class="entry">
+        <h3 class="entry-name">BLUETTI AC180P vs EcoFlow DELTA 2</h3>
+        <div class="addr-line">
+          <a class="addr" href="https://sernyak.github.io/Olofinskiy/ChargeStations.html" target="_blank" rel="noopener">sernyak.github.io/Olofinskiy/ChargeStations.html</a>
+        </div>
+        <span class="chip">не з цього проєкту</span>
+        <p class="entry-what">
+          Порівняння зарядних станцій. До проєкту не має жодного стосунку —
+          потрапило в репозиторій ще до того, як він став сайтом.
+        </p>
+        <p class="meta">
+          <span>оновлено 27.12.2025</span>
+          <span>кандидат на видалення</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ЩО ЗЛАМАНО ========== -->
+  <section>
+    <div class="sec-head">
+      <h2>На що зважати</h2>
+      <span class="count">3 знахідки</span>
+    </div>
+    <p class="sec-note">
+      Усе перевірено запитами до живих адрес 5 вересня 2026, а не взято з
+      документації.
+    </p>
+
+    <div class="issues">
+
+      <div class="issue">
+        <h3>Головна адреса показує не ту версію, яку правили</h3>
+        <p>
+          Три файли візитки різні між собою, і всі три живі. Найновіший — у
+          <em>/v6/</em>, куди ніхто не заходить, а на головній лежить версія на
+          день старша й з іншим текстом. Практично: остання робота над сайтом
+          нікому не показується.
+        </p>
+        <p class="proof">/ і /v6/ — різні файли · остання правка: / 17.06.2026, /v6/ 18.06.2026</p>
+      </div>
+
+      <div class="issue">
+        <h3>Жодна сторінка не посилається на іншу</h3>
+        <p>
+          З візитки можна перейти тільки у Facebook та Instagram. Ні лендінг, ні
+          презентація, ні план не пов'язані ні з чим — кожна відкривається лише
+          за точною адресою, яку треба знати напам'ять. Лендінг, зроблений під
+          заявки, через це не отримує навіть переходу з візитки.
+        </p>
+        <p class="proof">усі href в index.html — на facebook.com, instagram.com, шрифти й власний style.css</p>
+      </div>
+
+      <div class="issue">
+        <h3>Форма заявки на лендінгу нікуди не веде</h3>
+        <p>
+          Адреса приймача заявок не заповнена, тому форма просто копіює текст у
+          буфер обміну. Скільки заявок було й звідки — дізнатися неможливо.
+        </p>
+        <p class="proof">landing/script.js:16 — var LEAD_ENDPOINT = ""</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== ЯК ОНОВЛЮВАТИ ========== -->
+  <section>
+    <div class="sec-head">
+      <h2>Як оновити сторінку</h2>
+    </div>
+
+    <div class="howto-box">
+      <p>
+        <strong>Документи.</strong> Правити треба вихідник у теці
+        <code>docs/</code>, а не файл у теці публікації: вихідник загортається
+        скриптом і кладеться у <code>deck/</code>, <code>plan/</code> чи
+        <code>voronka/</code>. Якщо правити одразу опубліковану копію, наступна
+        збірка її перезапише.
+      </p>
+      <p>
+        <strong>Сайт.</strong> Виняток із правила вище: <code>v6/</code>
+        правиться напряму, окремого вихідника в нього немає.
+      </p>
+      <p>
+        <strong>Після публікації.</strong> GitHub Pages збирається близько
+        сорока секунд. Перевіряти адресу варто з міткою часу в запиті — мережа
+        доставки кешує сторінку на п'ять хвилин і показує стару версію.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Каталог складено 5 вересня 2026 · стан кожної адреси перевірено запитом,
+    а не взято з документації<br>
+    Службова сторінка: закрита від пошукових систем, посилання на неї немає
+    нізвідки
+  </footer>
+
+</div>
+
+</body>
+</html>
