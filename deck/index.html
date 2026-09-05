@@ -46,7 +46,7 @@ body{
 .slide{
   position:absolute;inset:0;
   display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(2rem,5vh,4rem) clamp(1.5rem,6vw,6rem) clamp(4rem,8vh,5.5rem);
+  padding:clamp(1rem,4.5vh,4rem) clamp(1.15rem,6vw,6rem) clamp(2.6rem,7.5vh,5.5rem);
   opacity:0;visibility:hidden;pointer-events:none;
   transform:translateY(14px);
   transition:opacity .34s ease, transform .34s ease, visibility .34s;
@@ -57,37 +57,37 @@ body{
 
 /* ── Типографіка ────────────────────────────────────── */
 .eyebrow{
-  font-size:clamp(.7rem,1.1vw,.82rem);font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:clamp(1rem,2.5vh,1.75rem);
+  font-size:clamp(.62rem,min(1.1vw,1.45vh),.82rem);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:clamp(.5rem,2.2vh,1.75rem);
 }
 h1{
   font-family:var(--f-d);font-weight:700;
-  font-size:clamp(2.1rem,6.2vw,4.6rem);line-height:1.04;letter-spacing:-.03em;
+  font-size:clamp(1.5rem,min(6.2vw,8vh),4.6rem);line-height:1.05;letter-spacing:-.03em;
   text-wrap:balance;
 }
 h2{
   font-family:var(--f-d);font-weight:600;
-  font-size:clamp(1.7rem,4.4vw,3.2rem);line-height:1.1;letter-spacing:-.025em;
-  text-wrap:balance;margin-bottom:clamp(1rem,3vh,2rem);
+  font-size:clamp(1.22rem,min(4.4vw,5.6vh),3.2rem);line-height:1.12;letter-spacing:-.025em;
+  text-wrap:balance;margin-bottom:clamp(.55rem,2.6vh,2rem);
 }
 .lead{
-  font-size:clamp(1.05rem,1.9vw,1.5rem);line-height:1.45;color:var(--soft);
-  max-width:44rem;margin-top:clamp(1rem,2.5vh,1.75rem);
+  font-size:clamp(.9rem,min(1.9vw,2.5vh),1.5rem);line-height:1.45;color:var(--soft);
+  max-width:44rem;margin-top:clamp(.6rem,2.2vh,1.75rem);
 }
 .lead.tight{margin-top:clamp(.75rem,1.5vh,1rem)}
 .hi{color:var(--gold)}
 .hi-t{color:var(--teal)}
 .hi-c{color:var(--coral)}
 .foot-note{
-  margin-top:clamp(1.25rem,3vh,2.25rem);font-size:clamp(.9rem,1.3vw,1.05rem);
+  margin-top:clamp(.65rem,2.4vh,2.25rem);font-size:clamp(.76rem,min(1.3vw,1.7vh),1.05rem);
   color:var(--dim);
 }
 
 /* ── Пункти ─────────────────────────────────────────── */
-.pts{display:flex;flex-direction:column;gap:clamp(.65rem,1.6vh,1.1rem);margin-top:clamp(1.25rem,3vh,2rem)}
+.pts{display:flex;flex-direction:column;gap:clamp(.35rem,1.5vh,1.1rem);margin-top:clamp(.7rem,2.6vh,2rem)}
 .pt{
   display:flex;gap:1rem;align-items:baseline;
-  font-size:clamp(1rem,1.7vw,1.35rem);line-height:1.4;
+  font-size:clamp(.86rem,min(1.7vw,2.2vh),1.35rem);line-height:1.4;
 }
 .pt i{
   flex:none;width:.5rem;height:.5rem;border-radius:50%;background:var(--gold);
@@ -99,7 +99,7 @@ h2{
 .pt span{color:var(--soft)}
 
 /* ── Дві колонки ────────────────────────────────────── */
-.two{display:grid;gap:clamp(1rem,2.5vw,1.75rem);margin-top:clamp(1.25rem,3vh,2rem)}
+.two{display:grid;gap:clamp(.6rem,2vw,1.75rem);margin-top:clamp(.7rem,2.6vh,2rem)}
 @media (min-width:52rem){.two{grid-template-columns:1fr 1fr}}
 .col{
   background:var(--surf);border:1px solid var(--line);border-radius:14px;
@@ -149,13 +149,13 @@ h2{
 @media (min-width:60rem){.arw{padding:0 .1rem}}
 
 /* ── Смуги ──────────────────────────────────────────── */
-.bars{display:flex;flex-direction:column;gap:clamp(.6rem,1.5vh,1rem);margin-top:clamp(1.25rem,3vh,2rem)}
+.bars{display:flex;flex-direction:column;gap:clamp(.35rem,1.4vh,1rem);margin-top:clamp(.7rem,2.6vh,2rem)}
 .bar .b-lab{
   display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
   font-size:clamp(.9rem,1.35vw,1.05rem);color:var(--soft);margin-bottom:.35rem;
 }
 .bar .b-val{font-weight:700;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
-.b-track{height:clamp(1.1rem,2.2vh,1.6rem);background:#1B212C;border-radius:4px;overflow:hidden}
+.b-track{height:clamp(.75rem,2.2vh,1.6rem);background:#1B212C;border-radius:4px;overflow:hidden}
 .b-fill{height:100%;border-radius:4px;width:0;transition:width .7s cubic-bezier(.2,.7,.3,1)}
 .on .b-fill{width:var(--w)}
 .b-fill.c{background:var(--coral)}
@@ -163,7 +163,7 @@ h2{
 .b-fill.g{background:var(--gold)}
 
 /* ── Великі числа ───────────────────────────────────── */
-.nums{display:grid;gap:clamp(1rem,2.5vw,2rem);margin-top:clamp(1.25rem,3vh,2rem)}
+.nums{display:grid;gap:clamp(.6rem,2.5vw,2rem);margin-top:clamp(.7rem,2.6vh,2rem)}
 @media (min-width:44rem){.nums{grid-template-columns:1fr 1fr}}
 .num{
   background:var(--surf);border:1px solid var(--line);border-radius:14px;
@@ -181,7 +181,7 @@ h2{
 .num .n-sub{font-size:clamp(.85rem,1.2vw,.98rem);color:var(--dim);margin-top:.5rem}
 
 /* ── Чипи ───────────────────────────────────────────── */
-.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:clamp(1.25rem,3vh,1.9rem)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:clamp(.7rem,2.6vh,1.9rem)}
 .chip{
   background:var(--surf);border:1px solid var(--line);border-radius:999px;
   padding:.5rem 1rem;font-size:clamp(.88rem,1.3vw,1.02rem);color:var(--soft);
@@ -198,7 +198,7 @@ h2{
 .badge.ok{background:var(--teal-dim);color:var(--teal)}
 
 /* ── Розсипані vs зв'язані ──────────────────────────── */
-.viz{margin-top:clamp(1.25rem,3vh,2rem);display:grid;gap:clamp(1rem,2.5vw,1.75rem)}
+.viz{margin-top:clamp(.7rem,2.6vh,2rem);display:grid;gap:clamp(.6rem,2.5vw,1.75rem)}
 @media (min-width:52rem){.viz{grid-template-columns:1fr 1fr}}
 .viz-box{
   background:var(--surf);border:1px solid var(--line);border-radius:14px;
@@ -246,7 +246,7 @@ h2{
 
 
 /* ── Розрив між постом і консультацією ─────────────── */
-.gapv{display:flex;align-items:center;gap:clamp(.5rem,2vw,1.5rem);margin-top:clamp(1.5rem,4vh,2.5rem)}
+.gapv{display:flex;align-items:center;gap:clamp(.4rem,2vw,1.5rem);margin-top:clamp(.8rem,3vh,2.5rem)}
 .gapv .end-n{
   flex:none;background:var(--surf);border:1px solid var(--line);border-radius:14px;
   padding:clamp(.9rem,1.8vw,1.35rem) clamp(1rem,2vw,1.5rem);text-align:center;min-width:9rem;
@@ -265,7 +265,7 @@ h2{
 }
 
 /* ── Воронка у формі воронки ───────────────────────── */
-.fnl{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.5rem}
+.fnl{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.35rem}
 .fl{
   margin:0 auto;border-radius:8px;width:var(--w);
   padding:clamp(.6rem,1.4vh,.9rem) 1rem;text-align:center;
@@ -283,14 +283,16 @@ h2{
 .fl.d{background:var(--gold);color:#1A1206;font-weight:600}
 
 /* ── Коло місць ────────────────────────────────────── */
-.rings{display:grid;gap:clamp(1rem,3vw,2.5rem);margin-top:clamp(1rem,2.5vh,1.75rem)}
+.rings{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.75rem,3vw,2.5rem);margin-top:clamp(.7rem,2.4vh,1.75rem)}
 @media (min-width:44rem){.rings{grid-template-columns:1fr 1fr}}
 .ring-box{text-align:center}
-.ring{position:relative;width:clamp(9rem,19vh,13rem);height:clamp(9rem,19vh,13rem);margin:0 auto}
+.ring{--r:clamp(2.6rem,min(8.6vh,17vw),5.9rem);position:relative;
+  width:calc(var(--r) * 2 + 1rem);height:calc(var(--r) * 2 + 1rem);margin:0 auto}
 .ring i{
-  position:absolute;left:50%;top:50%;width:.85rem;height:.85rem;border-radius:50%;
-  margin:-.425rem 0 0 -.425rem;
-  transform:rotate(var(--a)) translateY(calc(-1 * clamp(4rem,8.6vh,5.9rem)));
+  position:absolute;left:50%;top:50%;
+  width:clamp(.5rem,1.4vh,.85rem);height:clamp(.5rem,1.4vh,.85rem);border-radius:50%;
+  margin:calc(-.5 * clamp(.5rem,1.4vh,.85rem)) 0 0 calc(-.5 * clamp(.5rem,1.4vh,.85rem));
+  transform:rotate(var(--a)) translateY(calc(-1 * var(--r)));
   border:1.5px solid #3A4453;background:transparent;
 }
 .ring i.f{background:var(--gold);border-color:var(--gold)}
@@ -299,7 +301,7 @@ h2{
 .ring-box .cap b{display:block;font-family:var(--f-d);font-weight:600;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ink);margin-bottom:.2rem}
 
 /* ── Порівняння масштабу ───────────────────────────── */
-.scale{display:grid;gap:clamp(1rem,2.5vw,2rem);margin-top:clamp(1.25rem,3vh,2rem)}
+.scale{display:grid;gap:clamp(.6rem,2.5vw,2rem);margin-top:clamp(.7rem,2.6vh,2rem)}
 @media (min-width:44rem){.scale{grid-template-columns:1fr 1fr}}
 .sc{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:clamp(1rem,2vw,1.4rem)}
 .sc.g{border-color:#1D3A34;background:#111A18}
@@ -311,7 +313,7 @@ h2{
 .sc.g .sc-n{color:var(--teal)}
 
 /* ── Шлях стадіями ─────────────────────────────────── */
-.path{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.4rem}
+.path{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.3rem}
 @media (min-width:56rem){.path{flex-direction:row;align-items:flex-start;gap:0}}
 .st{flex:1;position:relative;padding:0 .3rem}
 .st .dot{
@@ -333,7 +335,7 @@ h2{
 }
 
 /* ── Компетенції ───────────────────────────────────── */
-.comp{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:clamp(1.25rem,3vh,1.9rem)}
+.comp{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:clamp(.7rem,2.4vh,1.9rem)}
 @media (min-width:44rem){.comp{grid-template-columns:repeat(3,1fr)}}
 .cq{
   background:var(--surf);border:1px solid var(--line);border-radius:10px;
@@ -343,7 +345,7 @@ h2{
 .cq .cs{font-size:clamp(.72rem,1vw,.82rem);color:var(--dim);margin-top:.2rem}
 
 /* ── Часова шкала ──────────────────────────────────── */
-.tml{margin-top:clamp(1.25rem,3vh,2rem);display:flex;flex-direction:column;gap:.55rem}
+.tml{margin-top:clamp(.7rem,2.6vh,2rem);display:flex;flex-direction:column;gap:.4rem}
 @media (min-width:56rem){.tml{flex-direction:row;gap:.5rem}}
 .tm{
   flex:1;background:var(--surf);border:1px solid var(--line);border-radius:12px;
@@ -356,6 +358,134 @@ h2{
 .tm .tw{font-size:clamp(.68rem,1vw,.76rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:.35rem}
 .tm .tn{font-family:var(--f-d);font-weight:600;font-size:clamp(.95rem,1.4vw,1.12rem);line-height:1.25}
 .tm .td{font-size:clamp(.8rem,1.1vw,.9rem);color:var(--soft);margin-top:.4rem;line-height:1.4}
+
+
+/* ── Вузький екран: телефон вертикально ─────────────── */
+@media (max-width:37.5rem){
+  .inner{max-width:none}
+  .node{padding:.6rem .85rem}
+  .node .n-top{font-size:.6rem;letter-spacing:.1em;margin-bottom:.15rem}
+  .node .n-name{font-size:.98rem;margin-bottom:.1rem;display:inline}
+  .node .n-price{font-size:.82rem;display:inline;margin-left:.45rem}
+  .node .n-desc{font-size:.8rem;margin-top:.25rem}
+  .flow{gap:.28rem}
+  .arw{font-size:.85rem;padding:0}
+  .col{padding:.85rem 1rem}
+  .col h3{font-size:.95rem;margin-bottom:.5rem}
+  .col p{font-size:.88rem}
+  .col p+p{margin-top:.45rem}
+  .num{padding:.9rem 1rem}
+  .num .n-big{font-size:1.9rem}
+  .chip{padding:.35rem .8rem;font-size:.85rem}
+  .comp{grid-template-columns:repeat(2,1fr)}
+  .cq{padding:.55rem .5rem}
+  .sc{padding:.7rem .85rem}
+  .sc .dotgrid i{width:.45rem;height:.45rem}
+  .sc .sc-n{font-size:1.15rem;margin-top:.5rem}
+  .dots{height:4.5rem}
+  .dots i{width:.7rem;height:.7rem}
+  .chain{height:4.5rem}
+  .chain i{height:.7rem}
+  .viz-box{padding:.85rem 1rem}
+  .tm{padding:.65rem .85rem}
+  .tm .td{font-size:.78rem;margin-top:.25rem}
+  .gapv .end-n{min-width:0;padding:.7rem .8rem}
+  .gapv .void span{font-size:.72rem;padding:0 .4rem}
+  .fl{padding:.5rem .75rem;font-size:.82rem}
+  .bar .b-lab{font-size:.82rem;gap:.5rem}
+  .ring-box .cap{font-size:.82rem;margin-top:.6rem}
+  .ring-box .cap b{font-size:1rem}
+}
+
+/* ── Низький екран: телефон горизонтально ───────────── */
+@media (max-height:30rem){
+  .slide{padding:.85rem clamp(1.15rem,5vw,3rem) 2.2rem}
+  .inner{max-width:none}
+  .pts{gap:.28rem}
+  .lead{margin-top:.5rem;line-height:1.35}
+  .lead.tight{margin-top:.35rem}
+  .foot-note{margin-top:.5rem;line-height:1.35}
+  .two,.bars,.nums,.rings,.scale,.path,.comp,.tml,.fnl,.flow,.viz,.gapv,.chips{margin-top:.5rem}
+  .col{padding:.6rem .8rem}
+  .col h3{margin-bottom:.35rem;font-size:.9rem}
+  .col p{font-size:.82rem;line-height:1.35}
+  .col p+p{margin-top:.3rem}
+  .node{padding:.5rem .7rem}
+  .node .n-desc{margin-top:.2rem;font-size:.78rem}
+  .num{padding:.7rem .9rem}
+  .num .n-cap{margin-bottom:.25rem;font-size:.8rem}
+  .num .n-big{font-size:1.7rem}
+  .num .n-sub{margin-top:.25rem;font-size:.78rem}
+  .chip{padding:.3rem .75rem}
+  .badge{margin-top:.4rem}
+  .fl{padding:.35rem .7rem}
+  .fnl{gap:.25rem}
+  .cq{padding:.45rem .4rem}
+  .cq .cs{display:none}
+  .tm{padding:.55rem .75rem}
+  .tm .td{font-size:.76rem;margin-top:.2rem}
+  .tml{gap:.3rem}
+  .sc{padding:.6rem .75rem}
+  .sc .sc-h{margin-bottom:.4rem;font-size:.8rem}
+  .sc .dotgrid i{width:.42rem;height:.42rem}
+  .sc .sc-n{margin-top:.45rem;font-size:1.1rem}
+  .dots{height:3.4rem}
+  .chain{height:3.4rem}
+  .viz-box{padding:.6rem .8rem}
+  .viz-box h3{margin-bottom:.5rem;font-size:.88rem}
+  .viz-box p{margin-top:.45rem;font-size:.78rem}
+  .ring-box .cap{margin-top:.45rem}
+  .gapv{margin-top:.6rem}
+  .gapv .end-n{padding:.5rem .7rem;min-width:0}
+  .st p{font-size:.76rem}
+  .ctrl{padding:.35rem clamp(1.15rem,5vw,3rem) .45rem;font-size:.72rem}
+  .ctrl button{width:1.75rem;height:1.75rem;font-size:.9rem}
+  .bar .b-lab{margin-bottom:.2rem;font-size:.8rem}
+}
+
+
+/* ── Низько, але широко: телефон горизонтально ─────── */
+@media (max-height:30rem) and (min-width:34rem){
+  .flow{flex-direction:row;align-items:stretch;gap:.3rem}
+  .arw{align-self:center;padding:0 .05rem;font-size:.9rem}
+  .tml{flex-direction:row;gap:.35rem}
+  .path{flex-direction:row;align-items:flex-start;gap:0}
+  .st{display:block;padding:0 .25rem}
+  .st::before{display:block}
+  .st .dot{margin:0 auto .45rem}
+  .st p{text-align:center}
+  .node .n-desc{font-size:.74rem;line-height:1.3}
+  .tm .tn{font-size:.9rem}
+  .viz{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr 1fr}
+  .scale{grid-template-columns:1fr 1fr}
+  .dots{height:2.9rem}
+  .chain{height:2.9rem}
+  .dots i{width:.6rem;height:.6rem}
+  .chain i{height:.6rem}
+  .viz-box h3{margin-bottom:.35rem}
+  .comp{gap:.3rem}
+  .cq .cn{font-size:.8rem}
+}
+
+/* ── Дуже низький екран ─────────────────────────────── */
+@media (max-height:23rem){
+  .slide{padding:.55rem clamp(.9rem,4vw,2rem) 1.8rem}
+  .eyebrow{margin-bottom:.25rem}
+  h2{margin-bottom:.35rem}
+  .node .n-desc,.tm .td,.viz-box p{display:none}
+  .foot-note{margin-top:.35rem;line-height:1.3}
+  .fnl{gap:.2rem}
+  .fl{padding:.26rem .6rem;font-size:.76rem}
+  .two{gap:.4rem}
+  .col{padding:.5rem .65rem}
+  .col p{font-size:.76rem;line-height:1.3}
+  .comp{gap:.25rem;margin-top:.4rem}
+  .cq{padding:.3rem .25rem}
+  .cq .cn{font-size:.74rem}
+  .chips{gap:.3rem}
+  .chip{padding:.22rem .6rem;font-size:.76rem}
+}
 
 @media (prefers-reduced-motion:reduce){
   .slide,.b-fill,.bar-top i,.fl{transition:none}
