@@ -11,6 +11,8 @@ knowledge_base/
 post-generator/
 fb-scraper/
 Olofinskiy_2024/
+транскрипти-відео/
 .DS_Store
 *.md
 !README.md
+docs-viewer/
