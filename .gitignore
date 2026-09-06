@@ -16,3 +16,10 @@ Olofinskiy_2024/
 *.md
 !README.md
 docs-viewer/
+marketing/
+ТЕКСТЫ ОЛОФ/
+розшифровка аудіо/
+.agent/
+.claude/
+scripts/
+*.scpt
